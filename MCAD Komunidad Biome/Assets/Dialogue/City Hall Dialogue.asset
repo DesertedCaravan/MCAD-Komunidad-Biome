@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
+  m_Name: City Hall Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueText
+  dialogue:
+  - 'Girl: Good day, Mayor!
+
+    Magandang umaga, Mayor!'
+  - "Mayor: Good day to you too, Hija.\r\nMagandang umaga rin sa\u2019yo, Hija."
+  - 'Girl: How are you today? There is flooding in most parts of Manila.
+
+    Kamusta
+    po kayo ngayon? May pagbaha sa maraming parte ng Maynila.'
+  - "Mayor: Yes, I know it\u2019s unusual to have flooding in just a short amount
+    of time. The local government is trying its best to control the situation.\r\nOo,
+    alam kong di karaniwan ang magkaroon ng baha sa maikling panahon lamang. Sinusubukan
+    ng lokal na pamahalaan ang kanilang makakaya upang pangasiwaan ang sitwasyon."
+  - "Girl: Isn\u2019t flooding a recurring problem in Manila?\r\nHindi ba paulti-ulit
+    nang problema ang pagbaha sa Maynila?"
+  - "Mayor: Yes, historically, Manila\u2019s urban plan is not designed to hold much
+    water and mitigate flooding. But implications of a changed climate has made these
+    challenges even harsher.\nOo, sa kasaysayan, ang planong urbanisasyon ng Maynila
+    ay hindi na-disenyo para mapanatili ang maraming tubig at makatulong sa pagbawas
+    ng baha. Ngunit ang mga implikasyon ng pagbabagong klima ay nagpapahirap pa sa
+    mga hamong ito."
+  - "Mayor: Across the globe, there are record flooding in areas that don\u2019t
+    usually have much rain. In Saudi Arabia for example, highest rain precipitation
+    was recorded.\nSa buong mundo, may mga naitala na baha sa mga lugar na karaniwan
+    ay hindi gaanong maulan. Halimbawa, sa Saudi Arabia, ang pinakamataas na pag-ulan
+    ay naitala.\n"
+  - "Mayor: It flooded most of its cities as their cities do not have  drainage designed
+    for heavy rains. Here in Manila, we don\u2019t have a proper strategy to mitigate
+    flooding and thus the problem recurs.\nBinaha ang karamihan sa mga lungsod nito
+    dahil wala silang sistema ng pagtanggap ng malalakas na ulan. Dito sa Maynila,
+    wala tayong tamang estratehiya upang maibsan ito kaya't patuloy tayong nagkakaroon
+    ng paulit-ulit na problema."
+  - 'Girl: So how do we solve this problem?
+
+    Paano po natin malulutas ang problemang
+    ito?'
+  - 'Mayor: Political will and the desire to care for the people are what we need.
+    Governments have been more concerned with agendas leading to corruption.
+
+    Kailangan
+    natin ng politikal will at ang pagnanais na mag-alaga sa mga tao. Ang mga pamahalaan
+    ay mas nakatuon sa mga planong nagdudulot ng korupsyon.'
+  - 'Mayor: We need an entire culture change to make revisions on a grand scale in
+    this city. We must collectively rally for a better future for all of us.
+
+    Kailangan
+    natin ng isang buong pagpalit sa kultura upang magkaroon ng malaking pagbabago
+    sa lungsod na ito. Kailangan nating magkaisa para sa isang mas magandang kinabukasan
+    para sa ating lahat.'
+  - 'Girl: Sounds like an ambitious plan. How do we do this?
+
+    Parang isang ambisyosong
+    plano. Paano natin gagawin ito?'
+  - 'Mayor: Leaders like me should listen to what people need. We have to be proactive
+    in leading the change we want to pursue. But that of course is a long-term commitment.
+
+    Ang
+    mga lider na katulad ko ay dapat makinig sa pangangailangan ng mga tao. Kailangan
+    nating maging pro-active sa pamumuno para sa pagbabagong nais nating itulak.
+    Ngunit syempre, ito ay isang pangmatagalang tungkulin.'
+  - 'Mayor: We have to design a culture that cares for the vulnerable and is empathetic
+    to all species. Our upbringing should center on ecological practice.
+
+    Kailangan
+    nating lumikha ng isang kultura na nag-aalaga sa mga mahihina at may pakialam
+    sa nararamdaman ng lahat ng mga species. Dapat nakatuon ang ating gawain sa ekolohikal
+    na praktika.'
+  - "Girl: But doesn\u2019t Filipino culture advocate for nature?\r\nNgunit hindi
+    ba nagtataguyod ang kulturang Filipino para sa kalikasan?"
+  - 'Mayor: Yes. Most of our traditional culture references nature as its inspiration.
+    In trying to decode, appreciate and contextualize our relationship with nature.
+
+    Oo.
+    Karamihan sa ating tradisyonal na kultura ay nagmumula sa kalikasan bilang inspirasyon
+    nito. Sa pagtatangka na unawain, pahalagahan, at bigyan ng konteksto ang ating
+    ugnayan sa kalikasan.'
+  - 'Mayor: Hundreds of years of colonialism has changed our views on how to live
+    and introduced us in an industrialized way of life.
+
+    Ang daang-daang taon
+    ng kolonyalismo ay nagbago sa ating pananaw sa kung paano mabuhay at ipinakilala
+    sa atin ang isang industriyalisadong paraan ng pamumuhay.'
+  - 'Mayor: We have to return to simpler ways of living and apply technologies that
+    will make our lives better.
+
+    Kailangan nating bumalik sa mas simpleng paraan
+    ng pamumuhay at gamitin ang teknolohiyang magpapabuti sa ating buhay.'
+  - 'Girl: It seems that we have so much to do. There is hope with leaders like you,
+    Mayor. I hope you use your power to make our lives better.
+
+    Mukhang marami
+    tayong dapat gawin upang mapabuti ang ating sitwasyon. May pag-asa sa mga lider
+    na tulad mo, Mayor. Umaasa ako na gagamitin mo ang iyong kapangyarihan sa pagpapaunlad
+    ng aming buhay.'
+  - 'Girl: What you do today will impact the future that I will have. Kids like me
+    count on you.
+
+    Dahil sa mga ginagawa mo ngayon, dadalhin mo ako sa hinaharap
+    na minana ko. Ang mga batang katulad ko ay umaasa sa iyo.'
+  - 'Mayor: Yes, young girl. I will try my best to do what is right.
+
+    Oo, bata.
+    Gagawin ko ang aking makakaya upang gumawa ng nararapat.'
+  responses: []

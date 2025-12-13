@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
+  m_Name: School Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueText
+  dialogue:
+  - 'Teacher: Ok class, good morning! How are you?
+
+    Magandang umaga!  Kamusta
+    kayo?'
+  - "Girl: I\u2019m good. It took some time to get here. There was a traffic jam
+    and the weather was burning hot!\r\nMaayos naman po. Medyo natagalan papunta
+    dito. Traffic at sobrang init!"
+  - 'Teacher: I know. It takes so much for us to learn and that is not good. How
+    can we make ourselves learn in these dire conditions?
+
+    Alam ko. Ang daming
+    pagsubok sa atin para matuto at iyon ay hindi maganda. Paano natin mapapabuti
+    ang ating pag-aaral sa ganitong kritikal na mga kalagayan?'
+  - 'Teacher: The added burden of strange weather has made it harder for students
+    to learn. Have you done your assignment?
+
+    Ang dagdag na pasanin ng kakaibang
+    panahon ay mas nagpapahirap sa mga mag-aaral na magsuri. Natapos mo na ba ang
+    iyong takdang aralin?'
+  - "Girl: Yes, ma\u2019am I have. But I noticed that some of my classmates are absent.\r\nOpo,
+    ma\u2019am, natapos ko po. Ngunit pansin ko lang na parang wala yata ang iba
+    kong mga kaklase."
+  - "Teacher: Some of them called in sick. Some got heatstroke. \r\nMay sakit daw
+    ang iba. Ang iba naman ay nagka-heatstroke."
+  - "Girl: Oh no! That is sad. \r\nNakakalungkot naman."
+  - "Teacher: I noticed that most of the parents don\u2019t know what\u2019s happening
+    today. They think the situation is the same as before.\nNapansin kong hindi alam
+    ng karamihan ng mga magulang ang nangyayari sa atin ngayon. Sa tingin nila ay
+    katulad lang ito ng sitwasyon dati."
+  - 'Teacher: Our temperatures have reached record high and it continues to go higher
+    each year. I advise you to not spend a lot of time outside in the sun, especially
+    at midday.
+
+    Ang temperatura natin ay nagtala ng mataas na record at patuloy
+    na tumataas taon-taon. Inirerekomenda ko na huwag ka masyadong magtagal sa sikat
+    ng araw sa labas, lalo na sa tanghali.'
+  - "Girl: Do you think that we know enough about what\u2019s happening today?\r\nSa
+    tingin niyo po ba ay sapat na ang ating nalalaman tungkol sa nangyayari ngayon?\r\n"
+  - 'Teacher: I do think that there should be more education platforms specialising
+    in climate change. Climate today has taken to the extremes, brought by human
+    activities.
+
+    Sa tingin ko ay dapat magkaroon ng marami pang mga plataporma
+    sa edukasyon na nakatuon sa pagbabago ng klima. Ang klima ngayon ay lumalala,
+    dulot ng mga gawain ng tao.'
+  - 'Teacher: We need to instil that our actions are important to mitigate these
+    changes. But I think that we are a little too late. We are already living with
+    it.
+
+    Kailangan nating ipaalam na ang ating mga kilos ay mahalaga upang maibsan
+    ang mga pagbabagong ito. Ngunit sa tingin ko, medyo huli na tayo. Nakatira na
+    tayo sa pagbabagong ito.'
+  - 'Girl: So what should we do?
+
+    Ano pong dapat nating gawin?'
+  - "Teacher: I want to say that we should do something, but the burden of living
+    today is already too much for most of us. We think about our survival and how
+    we can live better and that\u2019s the most urgent concern.\nGusto kong sabihin
+    na dapat tayong gumawa ng hakbang, ngunit ang pasanin ng buhay ngayon ay labis
+    na para sa karamihan sa atin. Iniisip natin kung paano makaligtas sa buhay at
+    kung paano tayo maaaring mabuhay nang mas maayos, at iyon ang pinakamahalagang
+    isipin."
+  - 'Teacher: For those of us who can see the bigger picture, we want those with
+    access to power to rethink their ways and be in solidarity with the rest of us.
+    It will be a long struggle but we should never stop.
+
+    Para sa atin na nakakakita
+    sa mas malaking larawan, nais naming ipakiusap sa mga may kapangyarihan na balikan
+    ang kanilang mga pamamaraan at makiisa sa ating lahat. Magiging mahabang laban
+    ito ngunit hindi tayo dapat huminto.'
+  - 'Girl: For a girl like me, this sounds so big and ambitious.
+
+    Para sa batang
+    babae katulad ko, tunog mataas ito at ambisyoso.'
+  - 'Teacher: It is. Because the scale of this phenomenon has reached every species
+    in this world.
+
+    Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na
+    sa bawat uri ng organismo sa mundo.'
+  responses: []

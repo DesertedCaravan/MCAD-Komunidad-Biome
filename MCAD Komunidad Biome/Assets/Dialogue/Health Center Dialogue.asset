@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
+  m_Name: Health Center Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueText
+  dialogue:
+  - "Doctor: So what can I do for you today, hija?\r\nAnong maipaglilingkod ko sa\u2018yo
+    ngayong araw, hija?"
+  - 'Girl: I feel nauseous and I have had fever on and off  for the last couple of
+    days. What could this be?
+
+    Nasusuka po ako at  pabalik-balik ang lagnat
+    ko nitong mga nakaraang araw. Ano kayang sakit ko?'
+  - 'Doctor: The erratic weather may have a hand on this. It''s 50c at midday and
+    it rains sporadically in the afternoons. Nowadays, the weather is more unpredictable.
+    I advise you to stay indoors.
+
+    Maaaring may kinalaman ang  pabago-bago ng
+    panahon. Ito ay 50c sa tanghali at umuulan nang paminsan-minsan sa hapon. Sa
+    ngayon, ang panahon ay higit na hindi mahuhulaan. Inirerekomenda ko na manatili
+    ka na lamang sa loob ng bahay.'
+  - 'Girl: But I have to go school, run errands.
+
+    Pero kailangan ko pong pumunta
+    sa eskwelahan at mag-asikaso ng mga gawain.'
+  - "Doctor: Right. This condition we have today has made you vulnerable to weather
+    phenomena. \r\nTama. Ang kondisyong ating nararanasan ngayon ay naging dahilan
+    kaya madali kang maapektuhan ng panahon."
+  - 'Girl: Do I have a choice in this? What can I do?
+
+    May pagpipilian po ba
+    ako dito? Anong maaari kong gawin?'
+  - 'Doctor: Human beings cannot control nature, and it is human activities that
+    accelerated the changes in the natural ecosystem, leading to these extreme conditions.
+    But you can do something about it.
+
+    Walang kapangyarihan mga tao sa kalikasan,
+    at ang gawain ng mga tao ang nagpabilis sa mga pagbabago sa likas na ekosistema,
+    na nagdulot sa mga malalang kondisyong ito. Ngunit may magagawa ka dito.'
+  - 'Doctor: If society acts to mitigate these changes, this collective action can
+    nudge things, including creating better living conditions for everyone.
+
+    Kung
+    ang lipunan ay kumikilos upang mabawasan ang mga pagbabagong ito, ang kolektibong
+    aksyong ito ay maaaring makapag-udyok ng mga bagay, katulad ng paglikha ng mas
+    mabuting kalagayan para sa pamumuhay ng lahat.'
+  - 'Doctor: The world where power and money are central to survival  is at odds
+    with nature and its ways.
+
+    Ang mundo kung saan ang kapangyarihan at pera
+    ang sentro ng pagkabuhay ay salungat sa kalikasan at sa mga paraan nito.'
+  - 'Girl: If I am unwilling to live in a world like this, can I have a normal happy
+    life?
+
+    Ngunit kung di maluwag sa kalooban ko ang mabuhay sa ganitong mundo,
+    sa tingin mo po ba ay magkakaroon ako ng normal at masayang buhay?'
+  - 'Doctor: Throughout history, humans have adapted to extreme conditions, wars,
+    and many adversities. I do think empathy is a big factor in our capacity to adapt.
+
+    Sa
+    kasaysayan, may kakayahan ang tao na umangkop sa mga malalang kalagayan, digmaan,
+    at maraming mga pagsubok. Ako ay naniniwala na ang ating kakayahan na makapag-ayos
+    ay may kinalaman sa ating kakayahang umangkop.'
+  - 'Doctor: If we keep advocating for a more caring world, we may see a world that
+    is liveable.
+
+    Kung patuloy tayong nagtataguyod para sa isang mas mapagmalasakit
+    na mundo, maaaring makita natin ang isang mundo na maaaring tirahan.'
+  - "Doctor: Happiness at this point is subjective. If we build caring communities
+    that look after each other then maybe we can have a better life.\nAng kaligayahan
+    sa puntong ito ay depende sa ating personal na pananaw. Kung tayo ay magtatatag
+    ng mga pamayanan na naglalayong mag-alaga para sa isa\u2019t isa, marahil ay
+    maaari tayong mabuhay nang mas mabuti."
+  - 'Girl: Thanks. Doc! I may feel sick, but I am hopeful that the younger generation
+    will take a stronger stance for our future.
+
+    Salamat, Dok. Bagamat may sakit
+    ako, may pag-asa akong ang nakababatang henerasyon ay mas malakas ang paninindigan
+    para sa ating kinabukasan.'
+  - "Doctor: That is true. The future holds what the past and present has done. We
+    all shape our destiny.\r\nTama \u2018yan. Ang hinaharap ay naglalaman ng mga
+    nagawa ng nakaraan at ng kasalukuyan. Lahat tayo ay gumagawa ng ating kapalaran."
+  - 'Doctor: We have to believe that our hope will withstand the coming tragedies
+    and make us resilient.
+
+    Kailangan nating maniwala na makakayanang lampasan
+    ang mga trahedya ng ating pag-asa ay at magpapatibay ito sa atin.'
+  - 'Girl: I agree. This nausea is killing me. For now, I would like to take medications.
+
+    Sumasang-ayon
+    ako. Nasusuka na ako. Sa ngayon, gusto ko na munang uminom ng gamot.'
+  - "Doctor: Here you go. And please take a rest. It takes time to recover.\r\n Ito
+    na. Magpahinga ka. Kailangan panahon para gumaling ka."
+  - 'Girl: Thanks, Doc!
+
+    Salamat, Dok!'
+  responses: []
