@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
 
-        if (Keyboard.current[Key.LeftShift].wasPressedThisFrame)
+        float movementSpeed = _walkSpeed;
+
+        if (Keyboard.current[Key.LeftShift].isPressed)
         {
-            _characterController.Move(move * _walkSpeed * Time.deltaTime);
+            movementSpeed = _runSpeed;
         }
-        else
-        {
-            _characterController.Move(move * _runSpeed * Time.deltaTime);
-        }
+
+        _characterController.Move(move * movementSpeed * Time.deltaTime);
 
         // Look Around
         if (Mouse.current != null)

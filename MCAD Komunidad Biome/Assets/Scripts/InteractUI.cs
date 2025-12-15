@@ -4,13 +4,12 @@ public class InteractUI : MonoBehaviour
 {
     [Header("Interactable Icon Data")]
     [SerializeField] private GameObject interactableIcon;
-    private bool isInteracted;
-
-    public bool IsInteracted => isInteracted;
+    private bool _interacting;
 
     void Start()
     {
         interactableIcon.SetActive(false);
+        _interacting = false;
     }
 
     void Update()
@@ -30,21 +29,21 @@ public class InteractUI : MonoBehaviour
         }
     }
 
-    public void NotInteracted()
+    public void StartedInteracting()
     {
-        isInteracted = false;
+        _interacting = true;
         interactableIcon.SetActive(false);
     }
 
-    public void SetInteracted()
+    public void FinishedInteracting()
     {
-        interactableIcon.SetActive(false);
-        isInteracted = true;
+        _interacting = false;
+        interactableIcon.SetActive(true);
     }
 
     public void CurrentlyLookingAt()
     {
-        if (isInteracted == false)
+        if (_interacting == false)
         {
             interactableIcon.SetActive(true);
         }
@@ -52,12 +51,15 @@ public class InteractUI : MonoBehaviour
 
     public void NotLookingAt()
     {
-        interactableIcon.SetActive(false);
+        if (_interacting == false)
+        {
+            interactableIcon.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerController>() != null && isInteracted == false)
+        if (other.gameObject.GetComponent<PlayerController>() != null)
         {
             interactableIcon.SetActive(true);
         }
@@ -65,7 +67,7 @@ public class InteractUI : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerController>() != null && isInteracted == false)
+        if (other.gameObject.GetComponent<PlayerController>() != null)
         {
             interactableIcon.SetActive(false);
         }

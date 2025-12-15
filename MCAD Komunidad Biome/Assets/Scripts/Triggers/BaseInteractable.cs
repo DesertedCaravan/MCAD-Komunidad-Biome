@@ -17,6 +17,9 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     protected bool _interacting = false;
     protected bool _interactedCheck = false;
 
+    [Header("Interact Icon")]
+    [SerializeField] private InteractUI interactUI;
+
     public virtual void Interact()
     {
         if (!_interacting && _interactedCheck == false)
@@ -47,7 +50,7 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     public virtual void CheckResponseEvents(DialogueText dialogueText)
     {
         // find DialogueEvent components attached to this Game Object and make sure that it matches
-        foreach (DialogueEvent dialogueEvents in GetComponents<DialogueEvent>()) // Old Version: if(TryGetComponent(out DialogueEvent dialogueEvents))
+        foreach (DialogueEvent dialogueEvents in GetComponents<DialogueEvent>()) // Old Version: if (TryGetComponent(out DialogueEvent dialogueEvents))
         {
             if (dialogueEvents.DialogueText == dialogueText)
             {
@@ -60,16 +63,19 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     // Note: Could add UnityEvents to the bottom three in the future
     protected virtual void OnFirstInteract()
     {
+        interactUI.StartedInteracting();
         onStartResponse.Invoke();
     }
 
     public virtual void OnEndInteract() // Occurs only after the dialogue has concluded
     {
+        interactUI.FinishedInteracting();
         onEndResponse.Invoke();
     }
 
     protected virtual void OnLaterInteract()
     {
+        interactUI.StartedInteracting();
         onLaterResponse.Invoke();
     }
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - 'Teacher: Ok class, good morning! How are you?
 
-    Magandang umaga!  Kamusta
+    Magandang umaga! Kamusta
     kayo?'
   - "Girl: I\u2019m good. It took some time to get here. There was a traffic jam
     and the weather was burning hot!\r\nMaayos naman po. Medyo natagalan papunta
@@ -90,6 +90,6 @@ MonoBehaviour:
   - 'Teacher: It is. Because the scale of this phenomenon has reached every species
     in this world.
 
-    Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na
-    sa bawat uri ng organismo sa mundo.'
+    Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na sa
+    bawat uri ng organismo sa mundo.'
   responses: []

@@ -263,10 +263,14 @@ public class DialogueBoxManager : MonoBehaviour
         }
 
         responseBox.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnPickedResponse(ResponseOptions response, int responseIndex)
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         responseBox.SetActive(false);
 
         foreach (GameObject button in tempResponseButtons) // remove all response buttons
