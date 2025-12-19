@@ -95,7 +95,7 @@ public class BaseTrigger : MonoBehaviour
     {
         if (SoundManager.instance != null)
         {
-            SoundManager.instance.PlayGameScreenTrack(track);
+            SoundManager.instance.PlayBGM(track);
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6705726046977122129
+--- !u!1001 &8867230592580274601
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,19 +8,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -155
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
+    - target: {fileID: 919132149155446097, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
       propertyPath: m_Name
       value: Church
       objectReference: {fileID: 0}
@@ -28,25 +28,25 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2626248031395061927}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
+      addedObject: {fileID: 1750668741125649819}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2527977961500347029}
-  m_SourcePrefab: {fileID: 100100000, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
---- !u!1 &5894912425419530752 stripped
+      addedObject: {fileID: 6935313459642765095}
+  m_SourcePrefab: {fileID: 100100000, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
+--- !u!1 &8633350937453556984 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d7fe8a350f579f04b8c609ba80672f0d, type: 3}
-  m_PrefabInstance: {fileID: 6705726046977122129}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5689953ad4c72ac40b5cbfdc01aa5b33, type: 3}
+  m_PrefabInstance: {fileID: 8867230592580274601}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2626248031395061927
+--- !u!65 &1750668741125649819
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5894912425419530752}
+  m_GameObject: {fileID: 8633350937453556984}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -59,15 +59,15 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2112.5, y: 1960.4652, z: 1676.25}
-  m_Center: {x: 0, y: 974.62775, z: -0}
---- !u!65 &2527977961500347029
+  m_Size: {x: 21.125, y: 19.60465, z: 16.7625}
+  m_Center: {x: 0, y: 9.746277, z: 0}
+--- !u!65 &6935313459642765095
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5894912425419530752}
+  m_GameObject: {fileID: 8633350937453556984}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -80,5 +80,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 615, y: 1960.4652, z: 1646.2}
-  m_Center: {x: 0, y: 974.6277, z: 420.7}
+  m_Size: {x: 6.15, y: 19.60465, z: 16.462}
+  m_Center: {x: 0, y: 9.746277, z: 4.207}
