@@ -12,10 +12,10 @@ public class BaseTrigger : MonoBehaviour
     [Header("Interactable Data")]
     [SerializeField] private TypeStruct triggerType;
     [SerializeField] private DialogueText triggerDialogue;
-    [SerializeField] [TextArea] private string triggerPopup;
-    private bool wasTriggered;
-    private bool wasExited;
-    [SerializeField] private bool allowRepeatTriggers;
+    [SerializeField] [TextArea] private string _triggerPopup;
+    private bool _wasTriggered;
+    private bool _wasExited;
+    [SerializeField] private bool _allowRepeatTriggers;
 
     [Header("Response Events")]
     [SerializeField] private UnityEvent onStartResponse;
@@ -23,7 +23,7 @@ public class BaseTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerController>() != null && wasTriggered == false)
+        if (other.GetComponent<PlayerController>() != null && _wasTriggered == false)
         {
             if (triggerType == TypeStruct.DialogueBox)
             {
@@ -34,20 +34,20 @@ public class BaseTrigger : MonoBehaviour
             }
             else if (triggerType == TypeStruct.Popup)
             {
-                MainManager.instance.DisplayHUD(triggerPopup, 0);
+                MainManager.instance.DisplayHUD(_triggerPopup, 0);
             }
 
             OnStartInteract();
 
-            if (allowRepeatTriggers == false)
+            if (_allowRepeatTriggers == false)
             {
-                wasTriggered = true;
+                _wasTriggered = true;
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<PlayerController>() != null && wasExited == false)
+        if (other.GetComponent<PlayerController>() != null && _wasExited == false)
         {
             if (triggerType == TypeStruct.Popup) // Note: TypeStruct.DialogueBox auto resolves by itself so there's no need to include it here
             {
@@ -55,9 +55,9 @@ public class BaseTrigger : MonoBehaviour
 
                 OnEndDialogueInteract();
 
-                if (allowRepeatTriggers == false)
+                if (_allowRepeatTriggers == false)
                 {
-                    wasExited = true;
+                    _wasExited = true;
                 }
             }
         }
@@ -65,8 +65,8 @@ public class BaseTrigger : MonoBehaviour
 
     public void OverrideRepeatTrigger() // In case allowRepeatTriggers is set to true, let other game objects toggle wasTriggered
     {
-        wasTriggered = true;
-        wasExited = true;
+        _wasTriggered = true;
+        _wasExited = true;
     }
 
     public void OnStartInteract()
@@ -91,6 +91,7 @@ public class BaseTrigger : MonoBehaviour
             }
         }
     }
+
     public void PlaySoundManagerTrack(int track)
     {
         if (SoundManager.instance != null)

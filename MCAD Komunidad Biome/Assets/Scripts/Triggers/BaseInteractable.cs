@@ -11,8 +11,8 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     [SerializeField] protected UnityEvent onStartResponse;
     [SerializeField] protected UnityEvent onLaterResponse;
     [SerializeField] protected UnityEvent onEndResponse;
-    [SerializeField] [TextArea] private string responseText;
-    [SerializeField] private int responseEndDelay;
+    [SerializeField] [TextArea] private string _responseText;
+    [SerializeField] private int _responseEndDelay;
 
     protected bool _interacting = false;
     protected bool _interactedCheck = false;
@@ -94,6 +94,6 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     }
     public void PlayResponseText()
     {
-        MainManager.instance.DisplayHUD(responseText, responseEndDelay);
+        MainManager.instance.DisplayHUD(_responseText, _responseEndDelay);
     }
 }

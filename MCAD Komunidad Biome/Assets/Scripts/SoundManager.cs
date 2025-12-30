@@ -6,12 +6,12 @@ public class SoundManager : MonoBehaviour
     [Header("BGM")]
     [SerializeField] private AudioSource bgm;
     [SerializeField] private List<AudioClip> bgmList;
-    private int currentTrack;
+    private int _currentTrack;
 
     [Header("Narration")]
     [SerializeField] private AudioSource narration;
     [SerializeField] private List<AudioClip> narrationList;
-    private int currentNarration;
+    private int _currentNarration;
 
     [Header("SFX")]
     [SerializeField] private AudioSource sfx;
@@ -32,12 +32,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void Start()
+    public void InitializeTracks()
     {
-        currentTrack = -1; // to allow index 0 to play
-        PlayBGM(0);
-
-        currentNarration = -1;
+        _currentTrack = -1; // to allow index 0 to play
+        _currentNarration = -1;
     }
 
     public void AdjustBGMVolume(float vol)
@@ -57,14 +55,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(int i)
     {
-        if (currentTrack != i) // to prevent repeat in zone transition
+        if (_currentTrack != i) // to prevent repeat in zone transition
         {
-            currentTrack = i;
+            _currentTrack = i;
 
             StopCurrentBGM();
 
-            bgm.clip = bgmList[currentTrack];
-            AdjustBGMVolume(0.5f);
+            bgm.clip = bgmList[_currentTrack];
+            AdjustBGMVolume(0.25f);
             bgm.loop = true;
             bgm.Play();
         }
@@ -77,14 +75,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlayNarration(int i)
     {
-        if (currentNarration != i) // to prevent repeat in zone transition
+        if (_currentNarration != i) // to prevent repeat in zone transition
         {
-            currentNarration = i;
+            _currentNarration = i;
 
             StopCurrentNarration();
 
-            narration.clip = narrationList[currentNarration];
-            AdjustBGMVolume(0.5f);
+            narration.clip = narrationList[_currentNarration];
+            AdjustBGMVolume(1.0f);
             narration.loop = false; // don't loop narration
             narration.Play();
         }

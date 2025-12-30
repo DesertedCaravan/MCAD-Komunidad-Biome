@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [Header("Looking Variables")]
     [SerializeField] private float _mouseSensitivity; // 10.0f;
     private Vector2 _mouseDelta;
+
+    private bool _allowMovement;
+
     // [SerializeField] private float minAngle; // = -89f; // Minimum turn angle
     // [SerializeField] private float maxAngle; // = 89f; // Maximum turn angle
     // float xRotation = 0;
@@ -24,51 +27,68 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Locks the cursor to the center of the screen
+        _allowMovement = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Movement
-        Vector2 moveInput = _moveAction.action.ReadValue<Vector2>();
-        float horizontal = moveInput.x; // Equivalent to GetAxis("Horizontal")
-        float vertical = moveInput.y; // Equivalent to GetAxis("Horizontal")
-
-        Vector3 move = transform.right * horizontal + transform.forward * vertical;
-
-        float movementSpeed = _walkSpeed;
-
-        if (Keyboard.current[Key.LeftShift].isPressed)
+        if (_allowMovement)
         {
-            movementSpeed = _runSpeed;
+            // Movement
+            Vector2 moveInput = _moveAction.action.ReadValue<Vector2>();
+            float horizontal = moveInput.x; // Equivalent to GetAxis("Horizontal")
+            float vertical = moveInput.y; // Equivalent to GetAxis("Horizontal")
+
+            Vector3 move = transform.right * horizontal + transform.forward * vertical;
+
+            float movementSpeed = _walkSpeed;
+
+            if (Keyboard.current[Key.LeftShift].isPressed)
+            {
+                movementSpeed = _runSpeed;
+            }
+
+            _characterController.Move(move * movementSpeed * Time.deltaTime);
+
+            // Look Around
+            if (Mouse.current != null)
+            {
+                _mouseDelta = Mouse.current.delta.ReadValue();
+                float mouseX = _mouseDelta.x * _mouseSensitivity * Time.deltaTime;
+                // float mouseY = _mouseDelta.y * _mouseSensitivity * Time.deltaTime;
+
+                // Horizontal rotation (player yaw)
+                transform.Rotate(Vector3.up * mouseX);
+
+                // Vertical rotation (camera pitch)
+                // xRotation -= mouseY;
+                // xRotation = Mathf.Clamp(xRotation, minAngle, maxAngle);
+                // _playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            }
+
+            // Zoom
+            /*
+            if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                isZoomed = !isZoomed;
+                _playerCamera.fieldOfView = isZoomed ? zoomFOV : 60.0f;
+            }
+            */
         }
+    }
 
-        _characterController.Move(move * movementSpeed * Time.deltaTime);
+    public void ToggleMovement(bool toggle)
+    {
+        _allowMovement = toggle;
 
-        // Look Around
-        if (Mouse.current != null)
+        if (toggle == true)
         {
-            _mouseDelta = Mouse.current.delta.ReadValue();
-            float mouseX = _mouseDelta.x * _mouseSensitivity * Time.deltaTime;
-            // float mouseY = _mouseDelta.y * _mouseSensitivity * Time.deltaTime;
-
-            // Horizontal rotation (player yaw)
-            transform.Rotate(Vector3.up * mouseX);
-
-            // Vertical rotation (camera pitch)
-            // xRotation -= mouseY;
-            // xRotation = Mathf.Clamp(xRotation, minAngle, maxAngle);
-            // _playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            Cursor.lockState = CursorLockMode.Locked; // Locks the cursor to the center of the screen
         }
-
-        // Zoom
-        /*
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        else if (toggle == false)
         {
-            isZoomed = !isZoomed;
-            _playerCamera.fieldOfView = isZoomed ? zoomFOV : 60.0f;
+            Cursor.lockState = CursorLockMode.None;
         }
-        */
     }
 }
