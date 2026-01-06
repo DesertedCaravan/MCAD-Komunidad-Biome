@@ -82,7 +82,7 @@ public class SoundManager : MonoBehaviour
             StopCurrentNarration();
 
             narration.clip = narrationList[_currentNarration];
-            AdjustBGMVolume(1.0f);
+            AdjustNarrationVolume(1.0f);
             narration.loop = false; // don't loop narration
             narration.Play();
         }
