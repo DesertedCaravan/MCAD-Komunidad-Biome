@@ -468,8 +468,8 @@ MonoBehaviour:
   onEndResponse:
     m_PersistentCalls:
       m_Calls: []
-  responseText: 
-  responseEndDelay: 0
+  _responseText: 
+  _responseEndDelay: 0
   interactUI: {fileID: 1511955556846819948}
 --- !u!114 &1511955556846819948
 MonoBehaviour:
