@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: School Repeat Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
   dialogue:
-  - Listen again?
+  - 'Makinig muli?
+
+    <i>Listen again?</i>'
   responses:
-  - optionText: Yes
+  - optionText: Oo <i>(Yes)</i>
     optionResult: {fileID: 11400000, guid: 67a892105892ce549901b3ff6a5c6b3e, type: 2}
-  - optionText: No
+  - optionText: Hindi <i>(No)</i>
     optionResult: {fileID: 0}

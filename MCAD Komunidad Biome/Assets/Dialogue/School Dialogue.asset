@@ -13,83 +13,86 @@ MonoBehaviour:
   m_Name: School Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
   dialogue:
-  - 'Teacher: Ok class, good morning! How are you?
+  - 'Teacher: Magandang umaga! Kamusta kayo?
 
-    Magandang umaga! Kamusta
-    kayo?'
-  - "Girl: I\u2019m good. It took some time to get here. There was a traffic jam
-    and the weather was burning hot!\r\nMaayos naman po. Medyo natagalan papunta
-    dito. Traffic at sobrang init!"
-  - 'Teacher: I know. It takes so much for us to learn and that is not good. How
-    can we make ourselves learn in these dire conditions?
+    <i>Ok class, good morning! How
+    are you?</i>'
+  - "Girl: Maayos naman po. Medyo natagalan papunta dito. Traffic at sobrang init!\n<i>I\u2019m
+    good. It took some time to get here. There was a traffic jam and the weather
+    was burning hot!</i>"
+  - 'Teacher: Alam ko. Ang daming pagsubok sa atin para matuto at iyon ay hindi maganda.
+    Paano natin mapapabuti ang ating pag-aaral sa ganitong kritikal na mga kalagayan?
 
-    Alam ko. Ang daming
-    pagsubok sa atin para matuto at iyon ay hindi maganda. Paano natin mapapabuti
-    ang ating pag-aaral sa ganitong kritikal na mga kalagayan?'
-  - 'Teacher: The added burden of strange weather has made it harder for students
-    to learn. Have you done your assignment?
+    <i>I
+    know. It takes so much for us to learn and that is not good. How can we make
+    ourselves learn in these dire conditions?</i>'
+  - 'Teacher: Ang dagdag na pasanin ng kakaibang panahon ay mas nagpapahirap sa mga
+    mag-aaral na magsuri. Natapos mo na ba ang iyong takdang aralin?
 
-    Ang dagdag na pasanin ng kakaibang
-    panahon ay mas nagpapahirap sa mga mag-aaral na magsuri. Natapos mo na ba ang
-    iyong takdang aralin?'
-  - "Girl: Yes, ma\u2019am I have. But I noticed that some of my classmates are absent.\r\nOpo,
-    ma\u2019am, natapos ko po. Ngunit pansin ko lang na parang wala yata ang iba
-    kong mga kaklase."
-  - "Teacher: Some of them called in sick. Some got heatstroke. \r\nMay sakit daw
-    ang iba. Ang iba naman ay nagka-heatstroke."
-  - "Girl: Oh no! That is sad. \r\nNakakalungkot naman."
-  - "Teacher: I noticed that most of the parents don\u2019t know what\u2019s happening
-    today. They think the situation is the same as before.\nNapansin kong hindi alam
-    ng karamihan ng mga magulang ang nangyayari sa atin ngayon. Sa tingin nila ay
-    katulad lang ito ng sitwasyon dati."
-  - 'Teacher: Our temperatures have reached record high and it continues to go higher
-    each year. I advise you to not spend a lot of time outside in the sun, especially
-    at midday.
+    <i>The
+    added burden of strange weather has made it harder for students to learn. Have
+    you done your assignment?</i>'
+  - "Girl: Opo, ma\u2019am, natapos ko po. Ngunit pansin ko lang na parang wala yata
+    ang iba kong mga kaklase.\n<i>Yes, ma\u2019am I have. But I noticed that some
+    of my classmates are absent.</i>"
+  - 'Teacher: May sakit daw ang iba. Ang iba naman ay nagka-heatstroke.
 
-    Ang temperatura natin ay nagtala ng mataas na record at patuloy
-    na tumataas taon-taon. Inirerekomenda ko na huwag ka masyadong magtagal sa sikat
-    ng araw sa labas, lalo na sa tanghali.'
-  - "Girl: Do you think that we know enough about what\u2019s happening today?\r\nSa
-    tingin niyo po ba ay sapat na ang ating nalalaman tungkol sa nangyayari ngayon?\r\n"
-  - 'Teacher: I do think that there should be more education platforms specialising
-    in climate change. Climate today has taken to the extremes, brought by human
-    activities.
+    <i>Some
+    of them called in sick. Some got heatstroke.</i>'
+  - 'Girl: Nakakalungkot naman.
 
-    Sa tingin ko ay dapat magkaroon ng marami pang mga plataporma
-    sa edukasyon na nakatuon sa pagbabago ng klima. Ang klima ngayon ay lumalala,
-    dulot ng mga gawain ng tao.'
-  - 'Teacher: We need to instil that our actions are important to mitigate these
-    changes. But I think that we are a little too late. We are already living with
-    it.
+    <i>Oh no! That is sad.</i>'
+  - "Teacher: Napansin kong hindi alam ng karamihan ng mga magulang ang nangyayari
+    sa atin ngayon. Sa tingin nila ay katulad lang ito ng sitwasyon dati.\n<i>I noticed
+    that most of the parents don\u2019t know what\u2019s happening today. They think
+    the situation is the same as before.</i>"
+  - 'Teacher: Ang temperatura natin ay nagtala ng mataas na record at patuloy na
+    tumataas taon-taon. Inirerekomenda ko na huwag ka masyadong magtagal sa sikat
+    ng araw sa labas, lalo na sa tanghali.
 
-    Kailangan nating ipaalam na ang ating mga kilos ay mahalaga upang maibsan
+    <i>Our temperatures have reached
+    record high and it continues to go higher each year. I advise you to not spend
+    a lot of time outside in the sun, especially at midday.</i>'
+  - "Girl: Sa tingin niyo po ba ay sapat na ang ating nalalaman tungkol sa nangyayari
+    ngayon?\n<i>Do you think that we know enough about what\u2019s happening today?</i>\r\n"
+  - 'Teacher: Sa tingin ko ay dapat magkaroon ng marami pang mga plataporma sa edukasyon
+    na nakatuon sa pagbabago ng klima. Ang klima ngayon ay lumalala, dulot ng mga
+    gawain ng tao.
+
+    <i>I do think that there should be more education platforms
+    specialising in climate change. Climate today has taken to the extremes, brought
+    by human activities.</i>'
+  - 'Teacher: Kailangan nating ipaalam na ang ating mga kilos ay mahalaga upang maibsan
     ang mga pagbabagong ito. Ngunit sa tingin ko, medyo huli na tayo. Nakatira na
-    tayo sa pagbabagong ito.'
-  - 'Girl: So what should we do?
+    tayo sa pagbabagong ito.
 
-    Ano pong dapat nating gawin?'
-  - "Teacher: I want to say that we should do something, but the burden of living
-    today is already too much for most of us. We think about our survival and how
-    we can live better and that\u2019s the most urgent concern.\nGusto kong sabihin
-    na dapat tayong gumawa ng hakbang, ngunit ang pasanin ng buhay ngayon ay labis
-    na para sa karamihan sa atin. Iniisip natin kung paano makaligtas sa buhay at
-    kung paano tayo maaaring mabuhay nang mas maayos, at iyon ang pinakamahalagang
-    isipin."
-  - 'Teacher: For those of us who can see the bigger picture, we want those with
-    access to power to rethink their ways and be in solidarity with the rest of us.
-    It will be a long struggle but we should never stop.
+    <i>We need to instil that our actions are important
+    to mitigate these changes. But I think that we are a little too late. We are
+    already living with it.</i>'
+  - 'Girl: Ano pong dapat nating gawin?
 
-    Para sa atin na nakakakita
-    sa mas malaking larawan, nais naming ipakiusap sa mga may kapangyarihan na balikan
-    ang kanilang mga pamamaraan at makiisa sa ating lahat. Magiging mahabang laban
-    ito ngunit hindi tayo dapat huminto.'
-  - 'Girl: For a girl like me, this sounds so big and ambitious.
+    <i>So what should we do?</i>'
+  - "Teacher: Gusto kong sabihin na dapat tayong gumawa ng hakbang, ngunit ang pasanin
+    ng buhay ngayon ay labis na para sa karamihan sa atin. Iniisip natin kung paano
+    makaligtas sa buhay at kung paano tayo maaaring mabuhay nang mas maayos, at iyon
+    ang pinakamahalagang isipin.\n<i>I want to say that we should do something, but
+    the burden of living today is already too much for most of us. We think about
+    our survival and how we can live better and that\u2019s the most urgent concern.</i>"
+  - 'Teacher: Para sa atin na nakakakita sa mas malaking larawan, nais naming ipakiusap
+    sa mga may kapangyarihan na balikan ang kanilang mga pamamaraan at makiisa sa
+    ating lahat. Magiging mahabang laban ito ngunit hindi tayo dapat huminto.
 
-    Para sa batang
-    babae katulad ko, tunog mataas ito at ambisyoso.'
-  - 'Teacher: It is. Because the scale of this phenomenon has reached every species
-    in this world.
+    <i>For
+    those of us who can see the bigger picture, we want those with access to power
+    to rethink their ways and be in solidarity with the rest of us. It will be a
+    long struggle but we should never stop.</i>'
+  - 'Girl: Para sa batang babae katulad ko, tunog mataas ito at ambisyoso.
 
-    Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na sa
-    bawat uri ng organismo sa mundo.'
+    <i>For
+    a girl like me, this sounds so big and ambitious.</i>'
+  - 'Teacher: Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na sa bawat uri
+    ng organismo sa mundo.
+
+    <i>It is. Because the scale of this phenomenon has
+    reached every species in this world.</i>'
   responses: []
