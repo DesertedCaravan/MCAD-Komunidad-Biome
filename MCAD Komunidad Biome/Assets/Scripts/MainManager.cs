@@ -1,8 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using TMPro;
+using UnityEngine.Rendering;
+// using UnityEngine.Rendering.Universal;
 
 public class MainManager : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class MainManager : MonoBehaviour
     [SerializeField] private GameObject HUDGroup; // only used at Start() to SetActive(true)
     [SerializeField] private GameObject HUDTextGroup;
     [SerializeField] private TextMeshProUGUI HUDText;
+
+    [Header("Volume")] // Reference: https://discussions.unity.com/t/how-edit-global-volume-profiles-from-script/858453/2
+    // [SerializeField] private VolumeProfile volumeProfile;
+    [SerializeField] private Material skybox;
+    private bool _sunsetBool;
+    private float _sunsetFloat;
 
     public PlayerController Controller => controller;
 
@@ -43,6 +50,24 @@ public class MainManager : MonoBehaviour
 
         HUDGroup.SetActive(true);
         HUDTextGroup.SetActive(false);
+
+        _sunsetBool = false;
+        _sunsetFloat = 1.0f;
+    }
+
+    void Update()
+    {
+        if (_sunsetBool == true)
+        {
+            _sunsetFloat += 0.01f * Time.deltaTime;
+            _sunsetFloat = Mathf.Clamp(_sunsetFloat, 0f, 2.0f);
+            SetSunset();
+
+            if (_sunsetFloat >= 2.0f)
+            {
+                _sunsetBool = false;
+            }
+        }
     }
 
     public void PlayNarration(int narration)
@@ -95,6 +120,27 @@ public class MainManager : MonoBehaviour
         SoundManager.instance.PlayBGM(0);
 
         controller.ToggleMovement(true);
+
+        SetSunset();
+        _sunsetBool = true;
+
+        // WIP
+        /*
+        if (volumeProfile.TryGet(out SplitToning splitToning))
+        {
+            splitToning.active = true;
+            splitToning.highlights.overrideState = true;
+
+            // VolumeParameter volumeParameter = new Vector4Parameter(new Vector4(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)));
+            // splitToning.highlights.SetValue(volumeParameter);
+        }
+        */
+    }
+
+    private void SetSunset()
+    {
+        // Reference: https://discussions.unity.com/t/how-can-i-change-the-atmosphere-thickness-skybox-material-with-another-script/878013/2
+        skybox.SetFloat("_AtmosphereThickness", _sunsetFloat);
     }
 
     private void EndGame()
