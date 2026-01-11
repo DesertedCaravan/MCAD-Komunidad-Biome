@@ -336,7 +336,7 @@ public class DialogueBoxManager : MonoBehaviour
         dialogueBox.gameObject.SetActive(false); // Make Dialogue Box not visible
         dialogueBoxGroup.SetActive(false);
 
-        MainManager.instance.ResumeFromDialogue(); // Allow player to move again
+        OverworldManager.instance.ResumeFromDialogue(); // Allow player to move again
     }
 
     private readonly struct Punctuation

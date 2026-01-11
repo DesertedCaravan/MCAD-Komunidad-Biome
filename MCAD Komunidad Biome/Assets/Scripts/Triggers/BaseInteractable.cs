@@ -29,7 +29,7 @@ public class BaseInteractable : MonoBehaviour, IInteractable
 
             CheckResponseEvents(interactDialogue);
 
-            MainManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
+            OverworldManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
             DialogueBoxManager.instance.TransitionToDialogue(this, interactDialogue);
 
             OnFirstInteract();
@@ -40,7 +40,7 @@ public class BaseInteractable : MonoBehaviour, IInteractable
 
             CheckResponseEvents(interactedDialogue);
 
-            MainManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
+            OverworldManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
             DialogueBoxManager.instance.TransitionToDialogue(this, interactedDialogue);
 
             OnLaterInteract();
@@ -94,6 +94,6 @@ public class BaseInteractable : MonoBehaviour, IInteractable
     }
     public void PlayResponseText()
     {
-        MainManager.instance.DisplayHUD(_responseText, _responseEndDelay);
+        OverworldManager.instance.DisplayHUD(_responseText, _responseEndDelay);
     }
 }

@@ -29,12 +29,12 @@ public class BaseTrigger : MonoBehaviour
             {
                 CheckResponseEvents(triggerDialogue);
 
-                MainManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
+                OverworldManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
                 DialogueBoxManager.instance.TransitionToDialogueTrigger(this, triggerDialogue);
             }
             else if (triggerType == TypeStruct.Popup)
             {
-                MainManager.instance.DisplayHUD(_triggerPopup, 0);
+                OverworldManager.instance.DisplayHUD(_triggerPopup, 0);
             }
 
             OnStartInteract();
@@ -51,7 +51,7 @@ public class BaseTrigger : MonoBehaviour
         {
             if (triggerType == TypeStruct.Popup) // Note: TypeStruct.DialogueBox auto resolves by itself so there's no need to include it here
             {
-                MainManager.instance.HideHUD();
+                OverworldManager.instance.HideHUD();
 
                 OnEndDialogueInteract();
 

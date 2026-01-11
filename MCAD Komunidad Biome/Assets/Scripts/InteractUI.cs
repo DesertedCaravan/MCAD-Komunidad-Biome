@@ -16,7 +16,7 @@ public class InteractUI : MonoBehaviour
     {
         if (interactableIcon.activeSelf)
         {
-            Vector3 direction = MainManager.instance.Controller.gameObject.transform.position - transform.position;
+            Vector3 direction = OverworldManager.instance.Controller.gameObject.transform.position - transform.position;
 
             if (direction.sqrMagnitude < 0.0001f)
                 return;

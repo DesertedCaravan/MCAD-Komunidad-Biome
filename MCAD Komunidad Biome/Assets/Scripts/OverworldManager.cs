@@ -1,24 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Rendering;
+// using UnityEngine.Rendering;
 // using UnityEngine.Rendering.Universal;
 
-public class MainManager : MonoBehaviour
+public class OverworldManager : MonoBehaviour
 {
+    [Header("Coroutine Delays")]
+    [SerializeField] private float fadeDelay; // 0.5f
+
+    [Header("Main Menu Scene")]
+    [SerializeField] private string mainMenuScene; // MainMenuScene
+
     [Header("Controller")]
     [SerializeField] private PlayerController controller;
-
-    [Header("Cutscene")]
-    [SerializeField] private GameObject cutsceneGroup;
-    [SerializeField] private GameObject cutsceneSkipButtonGroup;
-    [SerializeField] private Button cutsceneSkipButton;
-
-    [Header("HUD")]
-    [SerializeField] private GameObject HUDGroup; // only used at Start() to SetActive(true)
-    [SerializeField] private GameObject HUDTextGroup;
-    [SerializeField] private TextMeshProUGUI HUDText;
 
     [Header("Volume")] // Reference: https://discussions.unity.com/t/how-edit-global-volume-profiles-from-script/858453/2
     // [SerializeField] private VolumeProfile volumeProfile;
@@ -26,10 +23,19 @@ public class MainManager : MonoBehaviour
     private bool _sunsetBool;
     private float _sunsetFloat;
 
+    [Header("Scene Transition")]
+    [SerializeField] private SceneTransition sceneTransition;
+    [SerializeField] private GameObject cutsceneGroup;
+    [SerializeField] private GameObject cutsceneSkipButtonGameObject;
+    [SerializeField] private Button cutsceneSkipButton;
+    [SerializeField] private GameObject HUDGroup; // only used at Start() to SetActive(true)
+    [SerializeField] private GameObject HUDTextGameObject;
+    [SerializeField] private TextMeshProUGUI HUDText;
+
     public PlayerController Controller => controller;
 
     // Convert to Singleton
-    public static MainManager instance = null; // public static means that it can be accessed
+    public static OverworldManager instance = null; // public static means that it can be accessed
 
     private void Awake()
     {
@@ -49,10 +55,11 @@ public class MainManager : MonoBehaviour
         PlayNarration(0);
 
         HUDGroup.SetActive(true);
-        HUDTextGroup.SetActive(false);
+        HUDTextGameObject.SetActive(false);
 
         _sunsetBool = false;
         _sunsetFloat = 1.0f;
+        SetSunset();
     }
 
     void Update()
@@ -70,12 +77,14 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    public void PlayNarration(int narration)
+    private void PlayNarration(int narration)
     {
+        SceneFadeIn();
+
         controller.ToggleMovement(false);
 
         cutsceneGroup.SetActive(true);
-        cutsceneSkipButtonGroup.SetActive(true);
+        cutsceneSkipButtonGameObject.SetActive(true);
 
         cutsceneSkipButton.onClick.RemoveAllListeners();
 
@@ -108,7 +117,7 @@ public class MainManager : MonoBehaviour
         SoundManager.instance.StopCurrentNarration();
         SoundManager.instance.PlayNarration(1);
 
-        cutsceneSkipButton.onClick.AddListener(EndGame);
+        cutsceneSkipButton.onClick.AddListener(ReturnToMainMenu);
     }
 
     private void StartGame()
@@ -143,11 +152,44 @@ public class MainManager : MonoBehaviour
         skybox.SetFloat("_AtmosphereThickness", _sunsetFloat);
     }
 
-    private void EndGame()
+    public void EnterCutscene(int cutscene)
     {
-        // cutsceneGroup.SetActive(false);
+        controller.ToggleMovement(false); // Necessary Fix
 
-        // Exit to Menu Scene
+        SceneFadeOut();
+
+        StartCoroutine(CO_EnterCutscene(cutscene));
+    }
+
+    IEnumerator CO_EnterCutscene(int cutscene)
+    {
+        yield return new WaitForSeconds(fadeDelay + 1.0f);
+
+        PlayNarration(cutscene);
+    }
+
+    private void ReturnToMainMenu()
+    {
+        SceneFadeOut();
+
+        StartCoroutine(CO_ReturnToMainMenu());
+    }
+
+    IEnumerator CO_ReturnToMainMenu()
+    {
+        yield return new WaitForSeconds(fadeDelay + 1.0f);
+
+        SceneManager.LoadScene(mainMenuScene);
+    }
+
+    public void SceneFadeIn()
+    {
+        sceneTransition.StartFadeInTransition(fadeDelay);
+    }
+
+    public void SceneFadeOut()
+    {
+        sceneTransition.StartFadeOutTransition(fadeDelay);
     }
 
     public void PauseForDialogue()
@@ -168,7 +210,7 @@ public class MainManager : MonoBehaviour
     public void DisplayHUD(string text, int timer)
     {
         HUDText.text = text;
-        HUDTextGroup.SetActive(true);
+        HUDTextGameObject.SetActive(true);
 
         if (timer > 0)
         {
@@ -181,11 +223,12 @@ public class MainManager : MonoBehaviour
         yield return new WaitForSeconds(timer);
 
         HideHUD();
+
     }
 
     public void HideHUD()
     {
         HUDText.text = "";
-        HUDTextGroup.SetActive(false);
+        HUDTextGameObject.SetActive(false);
     }
 }
