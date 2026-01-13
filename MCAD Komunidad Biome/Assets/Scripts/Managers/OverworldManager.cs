@@ -52,7 +52,10 @@ public class OverworldManager : MonoBehaviour
     void Start()
     {
         SoundManager.instance.InitializeTracks();
-        PlayNarration(0);
+        SoundManager.instance.PlayBGM(0);
+
+        cutsceneGroup.SetActive(false);
+        cutsceneSkipButtonGameObject.SetActive(false);
 
         HUDGroup.SetActive(true);
         HUDTextGameObject.SetActive(false);
@@ -60,78 +63,10 @@ public class OverworldManager : MonoBehaviour
         _sunsetBool = false;
         _sunsetFloat = 1.0f;
         SetSunset();
-    }
 
-    void Update()
-    {
-        if (_sunsetBool == true)
-        {
-            _sunsetFloat += 0.01f * Time.deltaTime;
-            _sunsetFloat = Mathf.Clamp(_sunsetFloat, 0f, 2.0f);
-            SetSunset();
-
-            if (_sunsetFloat >= 2.0f)
-            {
-                _sunsetBool = false;
-            }
-        }
-    }
-
-    private void PlayNarration(int narration)
-    {
-        SceneFadeIn();
-
-        controller.ToggleMovement(false);
-
-        cutsceneGroup.SetActive(true);
-        cutsceneSkipButtonGameObject.SetActive(true);
-
-        cutsceneSkipButton.onClick.RemoveAllListeners();
-
-        switch (narration)
-        {
-            case 0:
-                PlayStartingNarration();
-                break;
-            case 1:
-                PlayEndingNarration();
-                break;
-            default:
-                PlayStartingNarration();
-                break;
-        }
-    }
-
-    private void PlayStartingNarration()
-    {
-        SoundManager.instance.StopCurrentBGM();
-        SoundManager.instance.StopCurrentNarration();
-        SoundManager.instance.PlayNarration(0);
-
-        cutsceneSkipButton.onClick.AddListener(StartGame);
-    }
-
-    private void PlayEndingNarration()
-    {
-        SoundManager.instance.StopCurrentBGM();
-        SoundManager.instance.StopCurrentNarration();
-        SoundManager.instance.PlayNarration(1);
-
-        cutsceneSkipButton.onClick.AddListener(ReturnToMainMenu);
-    }
-
-    private void StartGame()
-    {
-        cutsceneGroup.SetActive(false);
-
-        SoundManager.instance.StopCurrentBGM();
-        SoundManager.instance.StopCurrentNarration();
-        SoundManager.instance.PlayBGM(0);
+        _sunsetBool = true;
 
         controller.ToggleMovement(true);
-
-        SetSunset();
-        _sunsetBool = true;
 
         // WIP
         /*
@@ -146,50 +81,70 @@ public class OverworldManager : MonoBehaviour
         */
     }
 
+    void Update()
+    {
+        /*
+        if (_sunsetBool == true)
+        {
+            _sunsetFloat += 0.01f * Time.deltaTime;
+            _sunsetFloat = Mathf.Clamp(_sunsetFloat, 0f, 2.0f);
+            SetSunset();
+
+            if (_sunsetFloat >= 2.0f)
+            {
+                _sunsetBool = false;
+            }
+        }
+        */
+    }
+
     private void SetSunset()
     {
         // Reference: https://discussions.unity.com/t/how-can-i-change-the-atmosphere-thickness-skybox-material-with-another-script/878013/2
         skybox.SetFloat("_AtmosphereThickness", _sunsetFloat);
     }
 
-    public void EnterCutscene(int cutscene)
+    public void TriggerCutscene()
     {
-        controller.ToggleMovement(false); // Necessary Fix
+        controller.ToggleMovement(false);
 
-        SceneFadeOut();
+        sceneTransition.StartFadeOutTransition(fadeDelay);
 
-        StartCoroutine(CO_EnterCutscene(cutscene));
+        StartCoroutine(CO_TriggerCutscene());
     }
 
-    IEnumerator CO_EnterCutscene(int cutscene)
+    IEnumerator CO_TriggerCutscene()
     {
         yield return new WaitForSeconds(fadeDelay + 1.0f);
 
-        PlayNarration(cutscene);
+        StartCutscene();
     }
 
-    private void ReturnToMainMenu()
+    private void StartCutscene()
     {
-        SceneFadeOut();
+        sceneTransition.StartFadeInTransition(fadeDelay); // ADDED
 
-        StartCoroutine(CO_ReturnToMainMenu());
+        SoundManager.instance.PlayNarration(0);
+
+        cutsceneGroup.SetActive(true);
+        cutsceneSkipButtonGameObject.SetActive(true);
+
+        // cutsceneSkipButton.onClick.RemoveAllListeners();
+        // cutsceneSkipButton.onClick.AddListener(LoadMainMenuScene);
     }
 
-    IEnumerator CO_ReturnToMainMenu()
+    public void LoadMainMenuScene()
+    {
+        sceneTransition.StartFadeOutTransition(fadeDelay);
+
+        StartCoroutine(CO_LoadMainMenuScene());
+    }
+
+    IEnumerator CO_LoadMainMenuScene()
     {
         yield return new WaitForSeconds(fadeDelay + 1.0f);
 
         SceneManager.LoadScene(mainMenuScene);
-    }
-
-    public void SceneFadeIn()
-    {
-        sceneTransition.StartFadeInTransition(fadeDelay);
-    }
-
-    public void SceneFadeOut()
-    {
-        sceneTransition.StartFadeOutTransition(fadeDelay);
     }
 
     public void PauseForDialogue()

@@ -18,6 +18,7 @@ public class DialogueBoxManager : MonoBehaviour
     [SerializeField] private GameObject dialogueBoxGroup;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject dialogueClickIcon;
 
     private BaseInteractable currentInteraction;
     private BaseTrigger currentTrigger;
@@ -68,6 +69,7 @@ public class DialogueBoxManager : MonoBehaviour
     {
         dialogueBoxGroup.SetActive(false);
         dialogueBox.SetActive(false);
+        dialogueClickIcon.SetActive(false);
         startDialogue = false;
 
         responseBox.SetActive(false);
@@ -94,6 +96,7 @@ public class DialogueBoxManager : MonoBehaviour
                     // Skip the text loading and display the entire text box
                     StopAllCoroutines();
                     dialogueText.text = currentDialogueText.Dialogue[textIndex];
+                    dialogueClickIcon.SetActive(true);
                     CheckForResponses();
                 }
             }
@@ -108,6 +111,7 @@ public class DialogueBoxManager : MonoBehaviour
     public void TransitionToDialogue(BaseInteractable interaction, DialogueText dialogueText) // mainly called by CheckResponseEvents(DialogueText dialogueText) in BaseInteractable
     {
         dialogueBoxGroup.SetActive(true);
+        dialogueClickIcon.SetActive(false);
 
         currentInteraction = interaction;
         currentDialogueText = dialogueText; // dialogueText contains string[] dialogue & ResponseOptions[] responses
@@ -125,6 +129,7 @@ public class DialogueBoxManager : MonoBehaviour
     public void TransitionToDialogueTrigger(BaseTrigger trigger, DialogueText dialogueText)
     {
         dialogueBoxGroup.SetActive(true);
+        dialogueClickIcon.SetActive(false);
 
         currentTrigger = trigger;
         currentDialogueText = dialogueText; // dialogueText contains string[] dialogue & ResponseOptions[] responses
@@ -163,6 +168,8 @@ public class DialogueBoxManager : MonoBehaviour
     IEnumerator CO_TypeLine()
     {
         dialogueText.text = string.Empty;
+        dialogueClickIcon.SetActive(false);
+
         currentDialogueTextLine = null;
 
         if (textIndex > 0) // only delay transition after first text box
@@ -213,6 +220,7 @@ public class DialogueBoxManager : MonoBehaviour
         }
 
         dialogueText.text = currentDialogueTextLine; // String views the entire portion of the current dialogue
+        dialogueClickIcon.SetActive(true);
 
         CheckForResponses();
     }

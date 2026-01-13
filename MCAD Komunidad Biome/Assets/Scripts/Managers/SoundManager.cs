@@ -34,7 +34,8 @@ public class SoundManager : MonoBehaviour
 
     public void InitializeTracks()
     {
-        _currentTrack = -1; // to allow index 0 to play
+        // to allow index 0 to play
+        _currentTrack = -1;
         _currentNarration = -1;
     }
 
@@ -55,6 +56,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(int i)
     {
+        StopCurrentNarration();
+
         if (_currentTrack != i) // to prevent repeat in zone transition
         {
             _currentTrack = i;
@@ -75,6 +78,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlayNarration(int i)
     {
+        StopCurrentBGM();
+
         if (_currentNarration != i) // to prevent repeat in zone transition
         {
             _currentNarration = i;

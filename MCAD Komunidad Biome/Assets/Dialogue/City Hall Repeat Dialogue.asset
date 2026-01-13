@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - 'Makinig muli?
 
-    <i>Listen again?</i>'
+    <i>Listen again?'
   responses:
   - optionText: Oo <i>(Yes)</i>
     optionResult: {fileID: 11400000, guid: 38b012f2383e8ef4481ac8a554de6f45, type: 2}
