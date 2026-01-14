@@ -378,7 +378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -455}
+  m_AnchoredPosition: {x: 350, y: -360}
   m_SizeDelta: {x: 350, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403042181
@@ -675,7 +675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: -455}
+  m_AnchoredPosition: {x: -350, y: -360}
   m_SizeDelta: {x: 350, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497326004
@@ -1203,6 +1203,7 @@ MonoBehaviour:
   cutsceneGroup: {fileID: 363517807}
   cutsceneSkipButtonGameObject: {fileID: 1736790665}
   cutsceneSkipButton: {fileID: 1736790667}
+  islandRotation: {fileID: 1847060632}
 --- !u!1 &1195222385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,15 +1913,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 917969468884414792, guid: 4d63d408b9d8c7e47a34a3568ad5c431, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 917969468884414792, guid: 4d63d408b9d8c7e47a34a3568ad5c431, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 917969468884414792, guid: 4d63d408b9d8c7e47a34a3568ad5c431, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 917969468884414792, guid: 4d63d408b9d8c7e47a34a3568ad5c431, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2008,7 +2009,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1828191741}
   m_Father: {fileID: 0}
@@ -2026,6 +2027,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IslandRotation
   islandGameObject: {fileID: 1847060630}
+  zPosVariable: 0.01667
+  zoomVariable: 0.00416
+  counter: 0
 --- !u!1 &1936929831
 GameObject:
   m_ObjectHideFlags: 0

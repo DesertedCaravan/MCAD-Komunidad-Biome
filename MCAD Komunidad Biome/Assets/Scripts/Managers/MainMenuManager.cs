@@ -40,6 +40,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject cutsceneGroup;
     [SerializeField] private GameObject cutsceneSkipButtonGameObject;
     [SerializeField] private Button cutsceneSkipButton;
+    [SerializeField] private IslandRotation islandRotation;
 
     // Convert to Singleton
     public static MainMenuManager instance = null; // public static means that it can be accessed
@@ -124,6 +125,8 @@ public class MainMenuManager : MonoBehaviour
 
         // cutsceneSkipButton.onClick.RemoveAllListeners();
         // cutsceneSkipButton.onClick.AddListener(LoadOverworldScene);
+
+        islandRotation.ZoomIn();
     }
 
     public void LoadOverworldScene()
