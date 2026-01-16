@@ -12,101 +12,156 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: Health Center Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - "Doctor: Anong maipaglilingkod ko sa\u2018yo ngayong araw, hija?\n<i>So what
-    can I do for you today, hija?"
-  - 'Girl: Nasusuka po ako at  pabalik-balik ang lagnat ko nitong mga nakaraang araw.
-    Ano kayang sakit ko?
+  dialogueBox:
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: "Anong maipaglilingkod ko sa\u2018yo ngayong araw, hija?\n\n<i>So what
+      can I do for you today, hija?"
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Nasusuka po ako at  pabalik-balik ang lagnat ko nitong mga nakaraang
+      araw. Ano kayang sakit ko?
 
-    <i>I feel nauseous and I have had fever on and off 
-    for the last couple of days. What could this be?'
-  - 'Doctor: Maaaring may kinalaman ang pabago-bago ng panahon. Ito ay 50c sa tanghali
-    at umuulan nang paminsan-minsan sa hapon. Sa ngayon, ang panahon ay higit na
-    hindi mahuhulaan. Inirerekomenda ko na manatili ka na lamang sa loob ng bahay.
 
-    <i>The
-    erratic weather may have a hand on this. It''s 50c at midday and it rains sporadically
-    in the afternoons. Nowadays, the weather is more unpredictable. I advise you
-    to stay indoors.'
-  - 'Girl: Pero kailangan ko pong pumunta sa eskwelahan at mag-asikaso ng mga gawain.
+      <i>I feel nauseous and I have had fever
+      on and off  for the last couple of days. What could this be?'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Maaaring may kinalaman ang pabago-bago ng panahon. Ito ay 50c sa tanghali
+      at umuulan nang paminsan-minsan sa hapon. Sa ngayon, ang panahon ay higit na
+      hindi mahuhulaan. Inirerekomenda ko na manatili ka na lamang sa loob ng bahay.
 
-    <i>But
-    I have to go school, run errands.'
-  - 'Doctor: Tama. Ang kondisyong ating nararanasan ngayon ay naging dahilan kaya
-    madali kang maapektuhan ng panahon.
 
-    <i>Right. This condition we have today
-    has made you vulnerable to weather phenomena.'
-  - 'Girl: May pagpipilian po ba ako dito? Anong maaari kong gawin?
+      <i>The
+      erratic weather may have a hand on this. It''s 50c at midday and it rains sporadically
+      in the afternoons. Nowadays, the weather is more unpredictable. I advise you
+      to stay indoors.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Pero kailangan ko pong pumunta sa eskwelahan at mag-asikaso ng mga
+      gawain.
 
-    <i>Do I
-    have a choice in this? What can I do?'
-  - 'Doctor: Walang kapangyarihan mga tao sa kalikasan, at ang gawain ng mga tao
-    ang nagpabilis sa mga pagbabago sa likas na ekosistema, na nagdulot sa mga malalang
-    kondisyong ito. Ngunit may magagawa ka dito.
 
-    <i>Human beings cannot control
-    nature, and it is human activities that accelerated the changes in the natural
-    ecosystem, leading to these extreme conditions. But you can do something about
-    it.'
-  - 'Doctor: Kung ang lipunan ay kumikilos upang mabawasan ang mga pagbabagong ito,
-    ang kolektibong aksyong ito ay maaaring makapag-udyok ng mga bagay, katulad ng
-    paglikha ng mas mabuting kalagayan para sa pamumuhay ng lahat.
+      <i>But I have to go school, run errands.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Tama. Ang kondisyong ating nararanasan ngayon ay naging dahilan kaya
+      madali kang maapektuhan ng panahon.
 
-    <i>If society
-    acts to mitigate these changes, this collective action can nudge things, including
-    creating better living conditions for everyone.'
-  - 'Doctor: Ang mundo kung saan ang kapangyarihan at pera ang sentro ng pagkabuhay
-    ay salungat sa kalikasan at sa mga paraan nito.
 
-    <i>The world where power
-    and money are central to survival is at odds with nature and its ways.'
-  - 'Girl: Ngunit kung di maluwag sa kalooban ko ang mabuhay sa ganitong mundo, sa
-    tingin mo po ba ay magkakaroon ako ng normal at masayang buhay?
+      <i>Right. This condition we have
+      today has made you vulnerable to weather phenomena.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'May pagpipilian po ba ako dito? Anong maaari kong gawin?
 
-    <i>If I
-    am unwilling to live in a world like this, can I have a normal happy life?'
-  - 'Doctor: Sa kasaysayan, may kakayahan ang tao na umangkop sa mga malalang kalagayan,
-    digmaan, at maraming mga pagsubok. Ako ay naniniwala na ang ating kakayahan na
-    makapag-ayos ay may kinalaman sa ating kakayahang umangkop.
 
-    <i>Throughout
-    history, humans have adapted to extreme conditions, wars, and many adversities.
-    I do think empathy is a big factor in our capacity to adapt.'
-  - 'Doctor: Kung patuloy tayong nagtataguyod para sa isang mas mapagmalasakit na
-    mundo, maaaring makita natin ang isang mundo na maaaring tirahan.
+      <i>Do
+      I have a choice in this? What can I do?'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Walang kapangyarihan mga tao sa kalikasan, at ang gawain ng mga tao
+      ang nagpabilis sa mga pagbabago sa likas na ekosistema, na nagdulot sa mga
+      malalang kondisyong ito. Ngunit may magagawa ka dito.
 
-    <i>If
-    we keep advocating for a more caring world, we may see a world that is liveable.'
-  - "Doctor: Ang kaligayahan sa puntong ito ay depende sa ating personal na pananaw.
-    Kung tayo ay magtatatag ng mga pamayanan na naglalayong mag-alaga para sa isa\u2019t
-    isa, marahil ay maaari tayong mabuhay nang mas mabuti.\n<i>Happiness at this
-    point is subjective. If we build caring communities that look after each other
-    then maybe we can have a better life."
-  - 'Girl: Salamat, Dok. Bagamat may sakit ako, may pag-asa akong ang nakababatang
-    henerasyon ay mas malakas ang paninindigan para sa ating kinabukasan.
 
-    <i>Thanks.
-    Doc! I may feel sick, but I am hopeful that the younger generation will take
-    a stronger stance for our future.'
-  - "Doctor: Tama \u2018yan. Ang hinaharap ay naglalaman ng mga nagawa ng nakaraan
-    at ng kasalukuyan. Lahat tayo ay gumagawa ng ating kapalaran.\n<i>That is true.
-    The future holds what the past and present has done. We all shape our destiny."
-  - 'Doctor: Kailangan nating maniwala na makakayanang lampasan ang mga trahedya
-    ng ating pag-asa ay at magpapatibay ito sa atin.
+      <i>Human beings
+      cannot control nature, and it is human activities that accelerated the changes
+      in the natural ecosystem, leading to these extreme conditions. But you can
+      do something about it.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Kung ang lipunan ay kumikilos upang mabawasan ang mga pagbabagong
+      ito, ang kolektibong aksyong ito ay maaaring makapag-udyok ng mga bagay, katulad
+      ng paglikha ng mas mabuting kalagayan para sa pamumuhay ng lahat.
 
-    <i>We have to believe that
-    our hope will withstand the coming tragedies and make us resilient.'
-  - 'Girl: Sumasang-ayon ako. Nasusuka na ako. Sa ngayon, gusto ko na munang uminom
-    ng gamot.
 
-    <i>I agree. This nausea is killing me. For now, I would like to
-    take medications.'
-  - 'Doctor: Ito na. Magpahinga ka. Kailangan panahon para gumaling ka.
+      <i>If
+      society acts to mitigate these changes, this collective action can nudge things,
+      including creating better living conditions for everyone.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Ang mundo kung saan ang kapangyarihan at pera ang sentro ng pagkabuhay
+      ay salungat sa kalikasan at sa mga paraan nito.
 
-    <i>Here
-    you go. And please take a rest. It takes time to recover.'
-  - 'Girl: Salamat, Dok!
 
-    <i>Thanks, Doc!'
+      <i>The world where
+      power and money are central to survival is at odds with nature and its ways.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Ngunit kung di maluwag sa kalooban ko ang mabuhay sa ganitong mundo,
+      sa tingin mo po ba ay magkakaroon ako ng normal at masayang buhay?
+
+
+      <i>If
+      I am unwilling to live in a world like this, can I have a normal happy life?'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Sa kasaysayan, may kakayahan ang tao na umangkop sa mga malalang kalagayan,
+      digmaan, at maraming mga pagsubok. Ako ay naniniwala na ang ating kakayahan
+      na makapag-ayos ay may kinalaman sa ating kakayahang umangkop.
+
+
+      <i>Throughout
+      history, humans have adapted to extreme conditions, wars, and many adversities.
+      I do think empathy is a big factor in our capacity to adapt.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Kung patuloy tayong nagtataguyod para sa isang mas mapagmalasakit
+      na mundo, maaaring makita natin ang isang mundo na maaaring tirahan.
+
+
+      <i>If
+      we keep advocating for a more caring world, we may see a world that is liveable.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: "Ang kaligayahan sa puntong ito ay depende sa ating personal na pananaw.
+      Kung tayo ay magtatatag ng mga pamayanan na naglalayong mag-alaga para sa isa\u2019t
+      isa, marahil ay maaari tayong mabuhay nang mas mabuti.\n\n<i>Happiness at this
+      point is subjective. If we build caring communities that look after each other
+      then maybe we can have a better life."
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Salamat, Dok. Bagamat may sakit ako, may pag-asa akong ang nakababatang
+      henerasyon ay mas malakas ang paninindigan para sa ating kinabukasan.
+
+
+      <i>Thanks.
+      Doc! I may feel sick, but I am hopeful that the younger generation will take
+      a stronger stance for our future.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: "Tama \u2018yan. Ang hinaharap ay naglalaman ng mga nagawa ng nakaraan
+      at ng kasalukuyan. Lahat tayo ay gumagawa ng ating kapalaran.\n\n<i>That is
+      true. The future holds what the past and present has done. We all shape our
+      destiny."
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Kailangan nating maniwala na makakayanang lampasan ang mga trahedya
+      ng ating pag-asa ay at magpapatibay ito sa atin.
+
+
+      <i>We have to believe
+      that our hope will withstand the coming tragedies and make us resilient.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Sumasang-ayon ako. Nasusuka na ako. Sa ngayon, gusto ko na munang
+      uminom ng gamot.
+
+
+      <i>I agree. This nausea is killing me. For now, I
+      would like to take medications.'
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Ito na. Magpahinga ka. Kailangan panahon para gumaling ka.
+
+
+      <i>Here
+      you go. And please take a rest. It takes time to recover.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Salamat, Dok!
+
+
+      <i>Thanks, Doc!'
   responses: []

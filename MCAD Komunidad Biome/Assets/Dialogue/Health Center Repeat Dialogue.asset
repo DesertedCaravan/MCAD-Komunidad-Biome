@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: Health Center Repeat Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - 'Makinig muli?
+  dialogueBox:
+  - isNPCSpeaking: 1
+    speaker: Doctor
+    dialogue: 'Makinig muli?
 
-    <i>Listen again?'
+
+      <i>Listen again?'
   responses:
   - optionText: Oo <i>(Yes)</i>
     optionResult: {fileID: 11400000, guid: dafe5e69cf994fa45946e40fe83e3a6f, type: 2}

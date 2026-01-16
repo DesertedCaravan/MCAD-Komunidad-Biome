@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: Sari-Sari Repeat Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - 'Makinig muli?
+  dialogueBox:
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Makinig muli?
 
-    <i>Listen again?'
+
+      <i>Listen again?'
   responses:
   - optionText: Oo <i>(Yes)</i>
     optionResult: {fileID: 11400000, guid: 2f8f8839d1b43ed449a24e0ac9212cec, type: 2}

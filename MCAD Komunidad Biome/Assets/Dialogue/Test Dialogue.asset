@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: Test Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - Test 1
-  - Test 2
-  - Test 3
+  dialogueBox:
+  - isNPCSpeaking: 1
+    speaker: Test
+    dialogue: Test Dialogue 1
+  - isNPCSpeaking: 0
+    speaker: Test
+    dialogue: Test Dialogue 2
+  - isNPCSpeaking: 1
+    speaker: Test
+    dialogue: Test Dialogue 3
   responses: []

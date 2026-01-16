@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: City Hall Repeat Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - 'Makinig muli?
+  dialogueBox:
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Makinig muli?
 
-    <i>Listen again?'
+
+      <i>Listen again?'
   responses:
   - optionText: Oo <i>(Yes)</i>
     optionResult: {fileID: 11400000, guid: 38b012f2383e8ef4481ac8a554de6f45, type: 2}

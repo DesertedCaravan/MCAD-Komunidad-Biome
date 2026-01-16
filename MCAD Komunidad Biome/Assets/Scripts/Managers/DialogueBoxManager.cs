@@ -16,7 +16,10 @@ public class DialogueBoxManager : MonoBehaviour
 
     [Header("Dialogue Box")]
     [SerializeField] private GameObject dialogueBoxGroup;
+    [SerializeField] private GameObject npcDialogueBox;
+    [SerializeField] private GameObject playerDialogueBox;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private TextMeshProUGUI speakerText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject dialogueClickIcon;
 
@@ -31,7 +34,7 @@ public class DialogueBoxManager : MonoBehaviour
     [SerializeField] private GameObject responseBox; // Response Box Panel
     [SerializeField] private GameObject responseButtonGameObject;
     private List<GameObject> tempResponseButtons = new List<GameObject>();
-    private ResponseEvent[] responseEvents;
+    [SerializeField] private ResponseEvent[] responseEvents;
 
     [Header("Text Data")]
     private float textSpeed;
@@ -86,7 +89,7 @@ public class DialogueBoxManager : MonoBehaviour
         {
             if ((Mouse.current.leftButton.wasPressedThisFrame || Keyboard.current[interactKey].wasPressedThisFrame) && wait == false) // Left Click and Space Button // Formerly Left Click or E Button (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
             {
-                if (dialogueText.text == currentDialogueText.Dialogue[textIndex])
+                if (dialogueText.text == currentDialogueText.DialogueBox[textIndex].Dialogue)
                 {
                     // Move to next text box
                     NextLine();
@@ -95,7 +98,7 @@ public class DialogueBoxManager : MonoBehaviour
                 {
                     // Skip the text loading and display the entire text box
                     StopAllCoroutines();
-                    dialogueText.text = currentDialogueText.Dialogue[textIndex];
+                    dialogueText.text = currentDialogueText.DialogueBox[textIndex].Dialogue;
                     dialogueClickIcon.SetActive(true);
                     CheckForResponses();
                 }
@@ -153,7 +156,7 @@ public class DialogueBoxManager : MonoBehaviour
 
     void NextLine()
     {
-        if (textIndex < currentDialogueText.Dialogue.Length - 1) // if there's more than one text box
+        if (textIndex < currentDialogueText.DialogueBox.Length - 1) // if there's more than one text box
         {
             textIndex++; // move to next index
 
@@ -167,6 +170,18 @@ public class DialogueBoxManager : MonoBehaviour
 
     IEnumerator CO_TypeLine()
     {
+        if (currentDialogueText.DialogueBox[textIndex].IsNPCSpeaking == true)
+        {
+            npcDialogueBox.SetActive(true);
+            playerDialogueBox.SetActive(false);
+        }
+        else
+        {
+            npcDialogueBox.SetActive(false);
+            playerDialogueBox.SetActive(true);
+        }
+
+        speakerText.text = currentDialogueText.DialogueBox[textIndex].Speaker;
         dialogueText.text = string.Empty;
         dialogueClickIcon.SetActive(false);
 
@@ -179,7 +194,7 @@ public class DialogueBoxManager : MonoBehaviour
 
         // Current Typing Effect (higher textSpeed results in a faster text speed)
 
-        currentDialogueTextLine = currentDialogueText.Dialogue[textIndex];
+        currentDialogueTextLine = currentDialogueText.DialogueBox[textIndex].Dialogue;
 
         float t = 0;
         int charIndex = 0;
@@ -242,9 +257,9 @@ public class DialogueBoxManager : MonoBehaviour
 
     public void CheckForResponses()
     {
-        if (textIndex == currentDialogueText.Dialogue.Length - 1 && dialogueText.text == currentDialogueText.Dialogue[textIndex])
+        if (textIndex == currentDialogueText.DialogueBox.Length - 1 && dialogueText.text == currentDialogueText.DialogueBox[textIndex].Dialogue)
         {
-            if (textIndex == currentDialogueText.Dialogue.Length - 1 && currentDialogueText.HasResponses)
+            if (textIndex == currentDialogueText.DialogueBox.Length - 1 && currentDialogueText.HasResponses)
             {
                 ShowResponses(currentDialogueText.Responses);
             }
@@ -288,7 +303,7 @@ public class DialogueBoxManager : MonoBehaviour
 
         tempResponseButtons.Clear();
 
-        if (responseEvents != null && responseIndex <= responseEvents.Length) // check if responseIndex is within the in bounds of the ResponseEvents array
+        if (responseEvents != null && responseIndex < responseEvents.Length) // check if responseIndex is within the in bounds of the ResponseEvents array
         {
             responseEvents[responseIndex].OnPickedResponse?.Invoke(); // check for a responseEvent in the chosen index, then invoke the OnPickedResponse UnityEvent if there is
         }

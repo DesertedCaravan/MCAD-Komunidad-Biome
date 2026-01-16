@@ -19,9 +19,8 @@ public class OverworldManager : MonoBehaviour
 
     [Header("Volume")] // Reference: https://discussions.unity.com/t/how-edit-global-volume-profiles-from-script/858453/2
     // [SerializeField] private VolumeProfile volumeProfile;
-    [SerializeField] private Material skybox;
-    private bool _sunsetBool;
-    private float _sunsetFloat;
+    [SerializeField] private SunSet settingSun;
+    [SerializeField] private GameObject endingPlayerPosition;
 
     [Header("Scene Transition")]
     [SerializeField] private SceneTransition sceneTransition;
@@ -31,6 +30,7 @@ public class OverworldManager : MonoBehaviour
     [SerializeField] private GameObject HUDGroup; // only used at Start() to SetActive(true)
     [SerializeField] private GameObject HUDTextGameObject;
     [SerializeField] private TextMeshProUGUI HUDText;
+
 
     public PlayerController Controller => controller;
 
@@ -60,48 +60,9 @@ public class OverworldManager : MonoBehaviour
         HUDGroup.SetActive(true);
         HUDTextGameObject.SetActive(false);
 
-        _sunsetBool = false;
-        _sunsetFloat = 1.0f;
-        SetSunset();
-
-        _sunsetBool = true;
+        // settingSun.PrepareSunset();
 
         controller.ToggleMovement(true);
-
-        // WIP
-        /*
-        if (volumeProfile.TryGet(out SplitToning splitToning))
-        {
-            splitToning.active = true;
-            splitToning.highlights.overrideState = true;
-
-            // VolumeParameter volumeParameter = new Vector4Parameter(new Vector4(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)));
-            // splitToning.highlights.SetValue(volumeParameter);
-        }
-        */
-    }
-
-    void Update()
-    {
-        /*
-        if (_sunsetBool == true)
-        {
-            _sunsetFloat += 0.01f * Time.deltaTime;
-            _sunsetFloat = Mathf.Clamp(_sunsetFloat, 0f, 2.0f);
-            SetSunset();
-
-            if (_sunsetFloat >= 2.0f)
-            {
-                _sunsetBool = false;
-            }
-        }
-        */
-    }
-
-    private void SetSunset()
-    {
-        // Reference: https://discussions.unity.com/t/how-can-i-change-the-atmosphere-thickness-skybox-material-with-another-script/878013/2
-        skybox.SetFloat("_AtmosphereThickness", _sunsetFloat);
     }
 
     public void TriggerCutscene()
@@ -129,8 +90,25 @@ public class OverworldManager : MonoBehaviour
         cutsceneGroup.SetActive(true);
         cutsceneSkipButtonGameObject.SetActive(true);
 
+        controller.gameObject.transform.position = endingPlayerPosition.transform.position;
+        controller.gameObject.transform.rotation = Quaternion.Euler(0f, -5f, 0f);
+
+        settingSun.StartSunset();
+
         // cutsceneSkipButton.onClick.RemoveAllListeners();
         // cutsceneSkipButton.onClick.AddListener(LoadMainMenuScene);
+
+        // WIP
+        /*
+        if (volumeProfile.TryGet(out SplitToning splitToning))
+        {
+            splitToning.active = true;
+            splitToning.highlights.overrideState = true;
+
+            // VolumeParameter volumeParameter = new Vector4Parameter(new Vector4(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)));
+            // splitToning.highlights.SetValue(volumeParameter);
+        }
+        */
     }
 
     public void LoadMainMenuScene()

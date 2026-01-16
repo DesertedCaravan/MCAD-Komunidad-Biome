@@ -12,87 +12,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: School Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - 'Teacher: Magandang umaga! Kamusta kayo?
+  dialogueBox:
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Magandang umaga! Kamusta kayo?
 
-    <i>Ok class, good morning! How
-    are you?'
-  - "Girl: Maayos naman po. Medyo natagalan papunta dito. Traffic at sobrang init!\n<i>I\u2019m
-    good. It took some time to get here. There was a traffic jam and the weather
-    was burning hot!"
-  - 'Teacher: Alam ko. Ang daming pagsubok sa atin para matuto at iyon ay hindi maganda.
-    Paano natin mapapabuti ang ating pag-aaral sa ganitong kritikal na mga kalagayan?
 
-    <i>I
-    know. It takes so much for us to learn and that is not good. How can we make
-    ourselves learn in these dire conditions?'
-  - 'Teacher: Ang dagdag na pasanin ng kakaibang panahon ay mas nagpapahirap sa mga
-    mag-aaral na magsuri. Natapos mo na ba ang iyong takdang aralin?
+      <i>Ok class, good morning!
+      How are you?'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Maayos naman po. Medyo natagalan papunta dito. Traffic at sobrang
+      init!\n\n<i>I\u2019m good. It took some time to get here. There was a traffic
+      jam and the weather was burning hot!"
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Alam ko. Ang daming pagsubok sa atin para matuto at iyon ay hindi
+      maganda. Paano natin mapapabuti ang ating pag-aaral sa ganitong kritikal na
+      mga kalagayan?
 
-    <i>The
-    added burden of strange weather has made it harder for students to learn. Have
-    you done your assignment?'
-  - "Girl: Opo, ma\u2019am, natapos ko po. Ngunit pansin ko lang na parang wala yata
-    ang iba kong mga kaklase.\n<i>Yes, ma\u2019am I have. But I noticed that some
-    of my classmates are absent."
-  - 'Teacher: May sakit daw ang iba. Ang iba naman ay nagka-heatstroke.
 
-    <i>Some
-    of them called in sick. Some got heatstroke.'
-  - 'Girl: Nakakalungkot naman.
+      <i>I know. It takes so much for us to learn and that
+      is not good. How can we make ourselves learn in these dire conditions?'
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Ang dagdag na pasanin ng kakaibang panahon ay mas nagpapahirap sa
+      mga mag-aaral na magsuri. Natapos mo na ba ang iyong takdang aralin?
 
-    <i>Oh no! That is sad.'
-  - "Teacher: Napansin kong hindi alam ng karamihan ng mga magulang ang nangyayari
-    sa atin ngayon. Sa tingin nila ay katulad lang ito ng sitwasyon dati.\n<i>I noticed
-    that most of the parents don\u2019t know what\u2019s happening today. They think
-    the situation is the same as before."
-  - 'Teacher: Ang temperatura natin ay nagtala ng mataas na record at patuloy na
-    tumataas taon-taon. Inirerekomenda ko na huwag ka masyadong magtagal sa sikat
-    ng araw sa labas, lalo na sa tanghali.
 
-    <i>Our temperatures have reached
-    record high and it continues to go higher each year. I advise you to not spend
-    a lot of time outside in the sun, especially at midday.'
-  - "Girl: Sa tingin niyo po ba ay sapat na ang ating nalalaman tungkol sa nangyayari
-    ngayon?\n<i>Do you think that we know enough about what\u2019s happening today?"
-  - 'Teacher: Sa tingin ko ay dapat magkaroon ng marami pang mga plataporma sa edukasyon
-    na nakatuon sa pagbabago ng klima. Ang klima ngayon ay lumalala, dulot ng mga
-    gawain ng tao.
+      <i>The
+      added burden of strange weather has made it harder for students to learn. Have
+      you done your assignment?'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Opo, ma\u2019am, natapos ko po. Ngunit pansin ko lang na parang wala
+      yata ang iba kong mga kaklase.\n\n<i>Yes, ma\u2019am I have. But I noticed
+      that some of my classmates are absent."
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'May sakit daw ang iba. Ang iba naman ay nagka-heatstroke.
 
-    <i>I do think that there should be more education platforms
-    specialising in climate change. Climate today has taken to the extremes, brought
-    by human activities.'
-  - 'Teacher: Kailangan nating ipaalam na ang ating mga kilos ay mahalaga upang maibsan
-    ang mga pagbabagong ito. Ngunit sa tingin ko, medyo huli na tayo. Nakatira na
-    tayo sa pagbabagong ito.
 
-    <i>We need to instil that our actions are important
-    to mitigate these changes. But I think that we are a little too late. We are
-    already living with it.'
-  - 'Girl: Ano pong dapat nating gawin?
+      <i>Some
+      of them called in sick. Some got heatstroke.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Nakakalungkot naman.
 
-    <i>So what should we do?'
-  - "Teacher: Gusto kong sabihin na dapat tayong gumawa ng hakbang, ngunit ang pasanin
-    ng buhay ngayon ay labis na para sa karamihan sa atin. Iniisip natin kung paano
-    makaligtas sa buhay at kung paano tayo maaaring mabuhay nang mas maayos, at iyon
-    ang pinakamahalagang isipin.\n<i>I want to say that we should do something, but
-    the burden of living today is already too much for most of us. We think about
-    our survival and how we can live better and that\u2019s the most urgent concern."
-  - 'Teacher: Para sa atin na nakakakita sa mas malaking larawan, nais naming ipakiusap
-    sa mga may kapangyarihan na balikan ang kanilang mga pamamaraan at makiisa sa
-    ating lahat. Magiging mahabang laban ito ngunit hindi tayo dapat huminto.
 
-    <i>For
-    those of us who can see the bigger picture, we want those with access to power
-    to rethink their ways and be in solidarity with the rest of us. It will be a
-    long struggle but we should never stop.'
-  - 'Girl: Para sa batang babae katulad ko, tunog mataas ito at ambisyoso.
+      <i>Oh no! That is sad.'
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: "Napansin kong hindi alam ng karamihan ng mga magulang ang nangyayari
+      sa atin ngayon. Sa tingin nila ay katulad lang ito ng sitwasyon dati.\n\n<i>I
+      noticed that most of the parents don\u2019t know what\u2019s happening today.
+      They think the situation is the same as before."
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Ang temperatura natin ay nagtala ng mataas na record at patuloy na
+      tumataas taon-taon. Inirerekomenda ko na huwag ka masyadong magtagal sa sikat
+      ng araw sa labas, lalo na sa tanghali.
 
-    <i>For
-    a girl like me, this sounds so big and ambitious.'
-  - 'Teacher: Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na sa bawat uri
-    ng organismo sa mundo.
 
-    <i>It is. Because the scale of this phenomenon has
-    reached every species in this world.'
+      <i>Our temperatures have reached
+      record high and it continues to go higher each year. I advise you to not spend
+      a lot of time outside in the sun, especially at midday.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Sa tingin niyo po ba ay sapat na ang ating nalalaman tungkol sa nangyayari
+      ngayon?\n\n<i>Do you think that we know enough about what\u2019s happening
+      today?"
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Sa tingin ko ay dapat magkaroon ng marami pang mga plataporma sa edukasyon
+      na nakatuon sa pagbabago ng klima. Ang klima ngayon ay lumalala, dulot ng mga
+      gawain ng tao.
+
+
+      <i>I do think that there should be more education platforms
+      specialising in climate change. Climate today has taken to the extremes, brought
+      by human activities.'
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Kailangan nating ipaalam na ang ating mga kilos ay mahalaga upang
+      maibsan ang mga pagbabagong ito. Ngunit sa tingin ko, medyo huli na tayo. Nakatira
+      na tayo sa pagbabagong ito.
+
+
+      <i>We need to instil that our actions are
+      important to mitigate these changes. But I think that we are a little too late.
+      We are already living with it.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Ano pong dapat nating gawin?
+
+
+      <i>So what should we do?'
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: "Gusto kong sabihin na dapat tayong gumawa ng hakbang, ngunit ang pasanin
+      ng buhay ngayon ay labis na para sa karamihan sa atin. Iniisip natin kung paano
+      makaligtas sa buhay at kung paano tayo maaaring mabuhay nang mas maayos, at
+      iyon ang pinakamahalagang isipin.\n\n<i>I want to say that we should do something,
+      but the burden of living today is already too much for most of us. We think
+      about our survival and how we can live better and that\u2019s the most urgent
+      concern."
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Para sa atin na nakakakita sa mas malaking larawan, nais naming ipakiusap
+      sa mga may kapangyarihan na balikan ang kanilang mga pamamaraan at makiisa
+      sa ating lahat. Magiging mahabang laban ito ngunit hindi tayo dapat huminto.
+
+
+      <i>For
+      those of us who can see the bigger picture, we want those with access to power
+      to rethink their ways and be in solidarity with the rest of us. It will be
+      a long struggle but we should never stop.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Para sa batang babae katulad ko, tunog mataas ito at ambisyoso.
+
+
+      <i>For
+      a girl like me, this sounds so big and ambitious.'
+  - isNPCSpeaking: 1
+    speaker: Teacher
+    dialogue: 'Oo nga. Dahil ang saklaw ng penomenong ito ay umabot na sa bawat uri
+      ng organismo sa mundo.
+
+
+      <i>It is. Because the scale of this phenomenon
+      has reached every species in this world.'
   responses: []

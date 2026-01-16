@@ -12,79 +12,131 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: Sari-Sari Store Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - 'Girl: Magandang umaga!
+  dialogueBox:
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Magandang umaga!
 
-    <i>Hi, good day!'
-  - 'Vendor: Sa iyo rin. Anong gusto mong bilhin?
 
-    <i>Hello, what would you want
-    to buy?'
-  - "Girl: Ano pong pwede kong bilhin sa \u20B120?\n<i>May I know what I can buy
-    for P20?"
-  - "Vendor: Hmmm, Parang wala masyadong mabibili sa \u20B120. instant noodles kaya?\n<i>Hmmm.
-    I don\u2019t think you can buy a lot with P20. How about instant noodles?"
-  - 'Girl: Sige, eh kanin kaya?
+      <i>Hi, good day!'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Sa iyo rin. Anong gusto mong bilhin?
 
-    <i>Ok but how about rice?'
-  - "Vendor: \u20B160 bawat kilo \u2018yan.\n<i>That\u2019s P60 per kilo."
-  - 'Girl: Sige. Pero paano mabubuhay ang mga tao nang ganito?
 
-    <i>Ok. But how
-    can someone survive like this?'
-  - 'Vendor: Maraming bagay ang nagdala sa atin sa sitwasyong ito. Ang bigas ay naging
-    isang mahalagang tindang hindi na maabot ng marami.
+      <i>Hello, what would
+      you want to buy?'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Ano pong pwede kong bilhin sa \u20B120?\n\n<i>May I know what I can
+      buy for \u20B120?"
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: "Hmmm, Parang wala masyadong mabibili sa \u20B120. instant noodles
+      kaya?\n\n<i>Hmmm. I don\u2019t think you can buy a lot with \u20B120. How about
+      instant noodles?"
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Sige, eh kanin kaya?
 
-    <i>Many things have
-    brought us to this situation. Rice has become an expensive commodity, becoming
-    unattainable for many.'
-  - 'Vendor: Ang pagbabago ng klima ay nakadagdag pa sa pagbaba ng ani ng mga pananim.
-    Ngayon, umaangkat na tayo ng bigas mula sa mga ibang bansa. Dahil sa nagbabagong
-    mundo, nangailangang baguhin natin ang ating mga nakagawian sa pagkain.
 
-    <i>Climate
-    change compounds this by making crops yield less. We now import rice from other
-    countries. Because of this changed world, we have adapted our eating habits.'
-  - 'Girl: Ano ang alternatibo?
+      <i>Ok but how about rice?'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: "\u20B160 bawat kilo \u2018yan.\n\n<i>That\u2019s \u20B160 per kilo."
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Sige. Pero paano mabubuhay ang mga tao nang ganito?
 
-    <i>What is the alternative?'
-  - 'Vendor: Sa puntong ito, bumili ka na lang ng mga nakahandang pagkain mula sa
-    mga korporasyon.
 
-    <i>At this point, you just buy ready-made food from corporations.'
-  - 'Vendor: Ang malawakang pagmamanupaktura ay nagbigay ng pagkaing abot-kaya nga
-    ngunit hindi naman masustansya. Ang sistemang kapitalista ay gumagana upang magbigay
-    ng pakinabang sa mga nasa kapangyarihan habang ang iba ay nagtatrabaho lamang
-    upang mabuhay.
+      <i>Ok.
+      But how can someone survive like this?'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Maraming bagay ang nagdala sa atin sa sitwasyong ito. Ang bigas ay
+      naging isang mahalagang tindang hindi na maabot ng marami.
 
-    <i>Mass manufacturing has made food both affordable and unhealthy.
-    The capitalist system works to provide gains to those in power while the rest
-    merely survive.'
-  - "Girl: Nakakalungkot naman \u2018yan. Nabubuhay lang ang mga magulang ko sa minimum
-    wage na kinikita nila. Bakit naging ganito ang mundo?\n<i>That is sad. My parents
-    live day-to-day with their minimum wage. How did the world become like this?"
-  - 'Vendor: Ang punto ng pagbabago ay nagtutulak sa atin upang makita kung ano ang
-    mali sa paraan ng ating pamumuhay. Marahil ay naghihintay lamang tayo na bumagsak
-    ang buong sistema, na gumuho ang mundo.
 
-    <i>The tipping point moves us to
-    see what is wrong in the way we live. Perhaps we are just waiting for the entire
-    system to collapse, for the world to collapse.'
-  - 'Vendor: Kapag nangyari iyon, saka lamang tayo kikilos tulad sa pagkatapos ng
-    isang bagyo na nagpapaunawa sa atin sa lakas ng kalikasan. Kumikilos lamang tayo
-    kapag nakikita na natin ang lawak ng bisa nito.
+      <i>Many
+      things have brought us to this situation. Rice has become an expensive commodity,
+      becoming unattainable for many.'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Ang pagbabago ng klima ay nakadagdag pa sa pagbaba ng ani ng mga pananim.
+      Ngayon, umaangkat na tayo ng bigas mula sa mga ibang bansa. Dahil sa nagbabagong
+      mundo, nangailangang baguhin natin ang ating mga nakagawian sa pagkain.
 
-    <i>When that happens, we
-    then take action as in the case of the aftermath of a typhoon which makes us
-    understand the power of nature. We only take action when we see the scale of
-    its effect.'
-  - "Girl: Sige, sa tingin ko pwede na itong instant noodles, gutom na talaga ako,
-    kahit ano ay kakainin ko na.\n<i>Ok I guess, I\u2019ll take that instant noodles,
-    I\u2019m very hungry, I\u2019ll take anything at this point."
-  - 'Vendor: Ito po.
 
-    <i>Here you go.'
-  - 'Girl: Maraming salamat.
+      <i>Climate
+      change compounds this by making crops yield less. We now import rice from other
+      countries. Because of this changed world, we have adapted our eating habits.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Ano ang alternatibo?
 
-    <i>Thank you.'
+
+      <i>What is the alternative?'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Sa puntong ito, bumili ka na lang ng mga nakahandang pagkain mula
+      sa mga korporasyon.
+
+
+      <i>At this point, you just buy ready-made food
+      from corporations.'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Ang malawakang pagmamanupaktura ay nagbigay ng pagkaing abot-kaya
+      nga ngunit hindi naman masustansya. Ang sistemang kapitalista ay gumagana upang
+      magbigay ng pakinabang sa mga nasa kapangyarihan habang ang iba ay nagtatrabaho
+      lamang upang mabuhay.
+
+
+      <i>Mass manufacturing has made food both affordable
+      and unhealthy. The capitalist system works to provide gains to those in power
+      while the rest merely survive.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Nakakalungkot naman \u2018yan. Nabubuhay lang ang mga magulang ko
+      sa minimum wage na kinikita nila. Bakit naging ganito ang mundo?\n\n<i>That
+      is sad. My parents live day-to-day with their minimum wage. How did the world
+      become like this?"
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Ang punto ng pagbabago ay nagtutulak sa atin upang makita kung ano
+      ang mali sa paraan ng ating pamumuhay. Marahil ay naghihintay lamang tayo na
+      bumagsak ang buong sistema, na gumuho ang mundo.
+
+
+      <i>The tipping point
+      moves us to see what is wrong in the way we live. Perhaps we are just waiting
+      for the entire system to collapse, for the world to collapse.'
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Kapag nangyari iyon, saka lamang tayo kikilos tulad sa pagkatapos
+      ng isang bagyo na nagpapaunawa sa atin sa lakas ng kalikasan. Kumikilos lamang
+      tayo kapag nakikita na natin ang lawak ng bisa nito.
+
+
+      <i>When that happens,
+      we then take action as in the case of the aftermath of a typhoon which makes
+      us understand the power of nature. We only take action when we see the scale
+      of its effect.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Sige, sa tingin ko pwede na itong instant noodles, gutom na talaga
+      ako, kahit ano ay kakainin ko na.\n\n<i>Ok I guess, I\u2019ll take that instant
+      noodles, I\u2019m very hungry, I\u2019ll take anything at this point."
+  - isNPCSpeaking: 1
+    speaker: Vendor
+    dialogue: 'Ito po.
+
+
+      <i>Here you go.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Maraming salamat.
+
+
+      <i>Thank you.'
   responses: []

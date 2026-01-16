@@ -12,107 +12,164 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ea12f8a449cb44a14b91aff3965d3, type: 3}
   m_Name: City Hall Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueText
-  dialogue:
-  - 'Girl: Magandang umaga, Mayor!
+  dialogueBox:
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Magandang umaga, Mayor!
 
-    <i>Good day, Mayor!'
-  - "Mayor: Magandang umaga rin sa\u2019yo, Hija.\n<i>Good day to you too, Hija."
-  - 'Girl: Kamusta po kayo ngayon? May pagbaha sa maraming parte ng Maynila.
 
-    <i>How
-    are you today? There is flooding in most parts of Manila.'
-  - "Mayor: Oo, alam kong di karaniwan ang magkaroon ng baha sa maikling panahon
-    lamang. Sinusubukan ng lokal na pamahalaan ang kanilang makakaya upang pangasiwaan
-    ang sitwasyon.\n<i>Yes, I know it\u2019s unusual to have flooding in just a short
-    amount of time. The local government is trying its best to control the situation."
-  - "Girl: Hindi ba paulti-ulit nang problema ang pagbaha sa Maynila?\n<i>Isn\u2019t
-    flooding a recurring problem in Manila?"
-  - "Mayor: Oo, sa kasaysayan, ang planong urbanisasyon ng Maynila ay hindi na-disenyo
-    para mapanatili ang maraming tubig at makatulong sa pagbawas ng baha. Ngunit
-    ang mga implikasyon ng pagbabagong klima ay nagpapahirap pa sa mga hamong ito.\n<i>Yes,
-    historically, Manila\u2019s urban plan is not designed to hold much water and
-    mitigate flooding. But implications of a changed climate has made these challenges
-    even harsher."
-  - "Mayor: Sa buong mundo, may mga naitala na baha sa mga lugar na karaniwan ay
-    hindi gaanong maulan. Halimbawa, sa Saudi Arabia, ang pinakamataas na pag-ulan
-    ay naitala.\n<i>Across the globe, there are record flooding in areas that don\u2019t
-    usually have much rain. In Saudi Arabia for example, highest rain precipitation
-    was recorded."
-  - "Mayor: Binaha ang karamihan sa mga lungsod nito dahil wala silang sistema ng
-    pagtanggap ng malalakas na ulan. Dito sa Maynila, wala tayong tamang estratehiya
-    upang maibsan ito kaya't patuloy tayong nagkakaroon ng paulit-ulit na problema.\n<i>It
-    flooded most of its cities as their cities do not have  drainage designed for
-    heavy rains. Here in Manila, we don\u2019t have a proper strategy to mitigate
-    flooding and thus the problem recurs."
-  - 'Girl: Paano po natin malulutas ang problemang ito?
+      <i>Good day, Mayor!'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: "Magandang umaga rin sa\u2019yo, Hija.\n\n<i>Good day to you too, Hija."
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Kamusta po kayo ngayon? May pagbaha sa maraming parte ng Maynila.
 
-    <i>So how do we solve
-    this problem?'
-  - 'Mayor: Kailangan natin ng politikal will at ang pagnanais na mag-alaga sa mga
-    tao. Ang mga pamahalaan ay mas nakatuon sa mga planong nagdudulot ng korupsyon.
 
-    <i>Political
-    will and the desire to care for the people are what we need. Governments have
-    been more concerned with agendas leading to corruption.'
-  - 'Mayor: Kailangan natin ng isang buong pagpalit sa kultura upang magkaroon ng
-    malaking pagbabago sa lungsod na ito. Kailangan nating magkaisa para sa isang
-    mas magandang kinabukasan para sa ating lahat.
+      <i>How
+      are you today? There is flooding in most parts of Manila.'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: "Oo, alam kong di karaniwan ang magkaroon ng baha sa maikling panahon
+      lamang. Sinusubukan ng lokal na pamahalaan ang kanilang makakaya upang pangasiwaan
+      ang sitwasyon.\n\n<i>Yes, I know it\u2019s unusual to have flooding in just
+      a short amount of time. The local government is trying its best to control
+      the situation."
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Hindi ba paulti-ulit nang problema ang pagbaha sa Maynila?\n\n<i>Isn\u2019t
+      flooding a recurring problem in Manila?"
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: "Oo, sa kasaysayan, ang planong urbanisasyon ng Maynila ay hindi na-disenyo
+      para mapanatili ang maraming tubig at makatulong sa pagbawas ng baha. Ngunit
+      ang mga implikasyon ng pagbabagong klima ay nagpapahirap pa sa mga hamong ito.\n\n<i>Yes,
+      historically, Manila\u2019s urban plan is not designed to hold much water and
+      mitigate flooding. But implications of a changed climate has made these challenges
+      even harsher."
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: "Sa buong mundo, may mga naitala na baha sa mga lugar na karaniwan
+      ay hindi gaanong maulan. Halimbawa, sa Saudi Arabia, ang pinakamataas na pag-ulan
+      ay naitala.\n\n<i>Across the globe, there are record flooding in areas that
+      don\u2019t usually have much rain. In Saudi Arabia for example, highest rain
+      precipitation was recorded."
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: "Binaha ang karamihan sa mga lungsod nito dahil wala silang sistema
+      ng pagtanggap ng malalakas na ulan. Dito sa Maynila, wala tayong tamang estratehiya
+      upang maibsan ito kaya't patuloy tayong nagkakaroon ng paulit-ulit na problema.\n\n<i>It
+      flooded most of its cities as their cities do not have  drainage designed for
+      heavy rains. Here in Manila, we don\u2019t have a proper strategy to mitigate
+      flooding and thus the problem recurs."
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Paano po natin malulutas ang problemang ito?
 
-    <i>We need an entire culture
-    change to make revisions on a grand scale in this city. We must collectively
-    rally for a better future for all of us.'
-  - 'Girl: Parang isang ambisyosong plano. Paano natin gagawin ito?
 
-    <i>Sounds
-    like an ambitious plan. How do we do this?'
-  - 'Mayor: Ang mga lider na katulad ko ay dapat makinig sa pangangailangan ng mga
-    tao. Kailangan nating maging pro-active sa pamumuno para sa pagbabagong nais
-    nating itulak. Ngunit syempre, ito ay isang pangmatagalang tungkulin.
+      <i>So how do
+      we solve this problem?'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Kailangan natin ng politikal will at ang pagnanais na mag-alaga sa
+      mga tao. Ang mga pamahalaan ay mas nakatuon sa mga planong nagdudulot ng korupsyon.
 
-    <i>Leaders
-    like me should listen to what people need. We have to be proactive in leading
-    the change we want to pursue. But that of course is a long-term commitment.'
-  - 'Mayor: Kailangan nating lumikha ng isang kultura na nag-aalaga sa mga mahihina
-    at may pakialam sa nararamdaman ng lahat ng mga species. Dapat nakatuon ang ating
-    gawain sa ekolohikal na praktika.
 
-    <i>We have to design a culture that cares
-    for the vulnerable and is empathetic to all species. Our upbringing should center
-    on ecological practice.'
-  - "Girl: Ngunit hindi ba nagtataguyod ang kulturang Filipino para sa kalikasan?\n<i>But
-    doesn\u2019t Filipino culture advocate for nature?"
-  - 'Mayor: Oo. Karamihan sa ating tradisyonal na kultura ay nagmumula sa kalikasan
-    bilang inspirasyon nito. Sa pagtatangka na unawain, pahalagahan, at bigyan ng
-    konteksto ang ating ugnayan sa kalikasan.
+      <i>Political
+      will and the desire to care for the people are what we need. Governments have
+      been more concerned with agendas leading to corruption.'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Kailangan natin ng isang buong pagpalit sa kultura upang magkaroon
+      ng malaking pagbabago sa lungsod na ito. Kailangan nating magkaisa para sa
+      isang mas magandang kinabukasan para sa ating lahat.
 
-    <i>Yes. Most of our traditional
-    culture references nature as its inspiration. In trying to decode, appreciate
-    and contextualize our relationship with nature.'
-  - 'Mayor: Ang daang-daang taon ng kolonyalismo ay nagbago sa ating pananaw sa kung
-    paano mabuhay at ipinakilala sa atin ang isang industriyalisadong paraan ng pamumuhay.
 
-    <i>Hundreds
-    of years of colonialism has changed our views on how to live and introduced us
-    in an industrialized way of life.'
-  - 'Mayor: Kailangan nating bumalik sa mas simpleng paraan ng pamumuhay at gamitin
-    ang teknolohiyang magpapabuti sa ating buhay.
+      <i>We need an
+      entire culture change to make revisions on a grand scale in this city. We must
+      collectively rally for a better future for all of us.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Parang isang ambisyosong plano. Paano natin gagawin ito?
 
-    <i>We have to return to simpler
-    ways of living and apply technologies that will make our lives better.'
-  - 'Girl: Mukhang marami tayong dapat gawin upang mapabuti ang ating sitwasyon.
-    May pag-asa sa mga lider na tulad mo, Mayor. Umaasa ako na gagamitin mo ang iyong
-    kapangyarihan sa pagpapaunlad ng aming buhay.
 
-    <i>It seems that we have so
-    much to do. There is hope with leaders like you, Mayor. I hope you use your power
-    to make our lives better.'
-  - 'Girl: Dahil sa mga ginagawa mo ngayon, dadalhin mo ako sa hinaharap na minana
-    ko. Ang mga batang katulad ko ay umaasa sa iyo.
+      <i>Sounds
+      like an ambitious plan. How do we do this?'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Ang mga lider na katulad ko ay dapat makinig sa pangangailangan ng
+      mga tao. Kailangan nating maging pro-active sa pamumuno para sa pagbabagong
+      nais nating itulak. Ngunit syempre, ito ay isang pangmatagalang tungkulin.
 
-    <i>What you do today will
-    impact the future that I will have. Kids like me count on you.'
-  - 'Mayor: Oo, bata. Gagawin ko ang aking makakaya upang gumawa ng nararapat.
 
-    <i>Yes,
-    young girl. I will try my best to do what is right.'
+      <i>Leaders
+      like me should listen to what people need. We have to be proactive in leading
+      the change we want to pursue. But that of course is a long-term commitment.'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Kailangan nating lumikha ng isang kultura na nag-aalaga sa mga mahihina
+      at may pakialam sa nararamdaman ng lahat ng mga species. Dapat nakatuon ang
+      ating gawain sa ekolohikal na praktika.
+
+
+      <i>We have to design a culture
+      that cares for the vulnerable and is empathetic to all species. Our upbringing
+      should center on ecological practice.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: "Ngunit hindi ba nagtataguyod ang kulturang Filipino para sa kalikasan?\n\n<i>But
+      doesn\u2019t Filipino culture advocate for nature?"
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Oo. Karamihan sa ating tradisyonal na kultura ay nagmumula sa kalikasan
+      bilang inspirasyon nito. Sa pagtatangka na unawain, pahalagahan, at bigyan
+      ng konteksto ang ating ugnayan sa kalikasan.
+
+
+      <i>Yes. Most of our traditional
+      culture references nature as its inspiration. In trying to decode, appreciate
+      and contextualize our relationship with nature.'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Ang daang-daang taon ng kolonyalismo ay nagbago sa ating pananaw sa
+      kung paano mabuhay at ipinakilala sa atin ang isang industriyalisadong paraan
+      ng pamumuhay.
+
+
+      <i>Hundreds of years of colonialism has changed our views
+      on how to live and introduced us in an industrialized way of life.'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Kailangan nating bumalik sa mas simpleng paraan ng pamumuhay at gamitin
+      ang teknolohiyang magpapabuti sa ating buhay.
+
+
+      <i>We have to return
+      to simpler ways of living and apply technologies that will make our lives better.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Mukhang marami tayong dapat gawin upang mapabuti ang ating sitwasyon.
+      May pag-asa sa mga lider na tulad mo, Mayor. Umaasa ako na gagamitin mo ang
+      iyong kapangyarihan sa pagpapaunlad ng aming buhay.
+
+
+      <i>It seems that
+      we have so much to do. There is hope with leaders like you, Mayor. I hope you
+      use your power to make our lives better.'
+  - isNPCSpeaking: 0
+    speaker: Girl
+    dialogue: 'Dahil sa mga ginagawa mo ngayon, dadalhin mo ako sa hinaharap na minana
+      ko. Ang mga batang katulad ko ay umaasa sa iyo.
+
+
+      <i>What you do today
+      will impact the future that I will have. Kids like me count on you.'
+  - isNPCSpeaking: 1
+    speaker: Mayor
+    dialogue: 'Oo, bata. Gagawin ko ang aking makakaya upang gumawa ng nararapat.
+
+
+      <i>Yes,
+      young girl. I will try my best to do what is right.'
   responses: []
