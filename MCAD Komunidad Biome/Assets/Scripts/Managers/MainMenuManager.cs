@@ -41,6 +41,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject cutsceneSkipButtonGameObject;
     [SerializeField] private Button cutsceneSkipButton;
     [SerializeField] private IslandRotation islandRotation;
+    private Button continueButton;
 
     // Convert to Singleton
     public static MainMenuManager instance = null; // public static means that it can be accessed
@@ -68,6 +69,7 @@ public class MainMenuManager : MonoBehaviour
         startButton = startButtonGameObject.GetComponent<Button>();
         // settingsButton = settingsButtonGameObject.GetComponent<Button>();
         quitButton = quitButtonGameObject.GetComponent<Button>();
+        continueButton = cutsceneSkipButtonGameObject.GetComponent<Button>();
 
         startImage = startButtonGameObject.GetComponent<Image>();
         quitImage = quitButtonGameObject.GetComponent<Image>();
@@ -131,6 +133,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadOverworldScene()
     {
+        continueButton.enabled = false;
+
         sceneTransition.StartFadeOutTransition(fadeDelay);
 
         StartCoroutine(CO_LoadNextScene());

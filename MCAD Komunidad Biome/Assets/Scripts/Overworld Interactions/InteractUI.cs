@@ -6,10 +6,16 @@ public class InteractUI : MonoBehaviour
     [SerializeField] private GameObject interactableIcon;
     private bool _interacting;
 
+    [SerializeField] private float _amplitude; // 1f;
+    [SerializeField] private float _frequency; // 1f;
+    private Vector3 startPosition;
+
     void Start()
     {
         interactableIcon.SetActive(false);
         _interacting = false;
+
+        startPosition = interactableIcon.transform.position;
     }
 
     void Update()
@@ -26,6 +32,10 @@ public class InteractUI : MonoBehaviour
             // Rotate to face the target
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = targetRotation;
+
+            // Sine Wave
+            float yOffset = _amplitude * Mathf.Sin(Time.time * _frequency);
+            interactableIcon.transform.position = startPosition + new Vector3(0, yOffset, 0);
         }
     }
 

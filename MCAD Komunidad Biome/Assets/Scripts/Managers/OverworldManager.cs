@@ -113,6 +113,8 @@ public class OverworldManager : MonoBehaviour
 
     public void LoadMainMenuScene()
     {
+        cutsceneSkipButton.enabled = false;
+
         sceneTransition.StartFadeOutTransition(fadeDelay);
 
         StartCoroutine(CO_LoadMainMenuScene());
