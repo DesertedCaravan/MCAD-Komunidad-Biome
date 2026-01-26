@@ -1562,7 +1562,7 @@ PrefabInstance:
     - target: {fileID: 6627819757814805851, guid: 11c71a63230c2444d997e2163a6c9b16, type: 3}
       propertyPath: 'narrationList.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: aefcf6dff717b3c4dae3e02f4c30bbe2, type: 3}
+      objectReference: {fileID: 8300000, guid: 43560639d56a8044bb564a8ff2aac786, type: 3}
     - target: {fileID: 7441946209750462279, guid: 11c71a63230c2444d997e2163a6c9b16, type: 3}
       propertyPath: m_Name
       value: SoundManager

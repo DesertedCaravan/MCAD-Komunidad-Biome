@@ -120,7 +120,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void StartCutscene()
     {
-        SoundManager.instance.PlayNarration(0);
+        SoundManager.instance.PlayNarration(0, 0.3f);
 
         cutsceneGroup.SetActive(true);
         cutsceneSkipButtonGameObject.SetActive(true);

@@ -13608,7 +13608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2161814081476149016, guid: c823feb57eedf8a4894c754973dd2f70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.24
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2161814081476149016, guid: c823feb57eedf8a4894c754973dd2f70, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77980,6 +77980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e3ceee55df584eafdab54bea40cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverworldManager
+  moveDelay: 0.5
   fadeDelay: 0.5
   mainMenuScene: MainMenuScene
   controller: {fileID: 951298690}

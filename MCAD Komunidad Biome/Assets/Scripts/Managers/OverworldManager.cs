@@ -9,6 +9,7 @@ using TMPro;
 public class OverworldManager : MonoBehaviour
 {
     [Header("Coroutine Delays")]
+    [SerializeField] private float moveDelay; // 0.5f
     [SerializeField] private float fadeDelay; // 0.5f
 
     [Header("Main Menu Scene")]
@@ -62,6 +63,18 @@ public class OverworldManager : MonoBehaviour
 
         // settingSun.PrepareSunset();
 
+        AllowMovement();
+    }
+
+    public void AllowMovement()
+    {
+        StartCoroutine(CO_AllowMovement());
+    }
+
+    IEnumerator CO_AllowMovement()
+    {
+        yield return new WaitForSeconds(moveDelay);
+
         controller.ToggleMovement(true);
     }
 
@@ -85,7 +98,7 @@ public class OverworldManager : MonoBehaviour
     {
         sceneTransition.StartFadeInTransition(fadeDelay); // ADDED
 
-        SoundManager.instance.PlayNarration(0);
+        SoundManager.instance.PlayNarration(0, 1.0f);
 
         cutsceneGroup.SetActive(true);
         cutsceneSkipButtonGameObject.SetActive(true);
