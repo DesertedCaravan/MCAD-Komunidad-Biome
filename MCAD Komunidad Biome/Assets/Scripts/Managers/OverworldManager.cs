@@ -98,7 +98,7 @@ public class OverworldManager : MonoBehaviour
     {
         sceneTransition.StartFadeInTransition(fadeDelay); // ADDED
 
-        SoundManager.instance.PlayNarration(0, 1.0f);
+        SoundManager.instance.PlayNarration(0, 0.3f);
 
         cutsceneGroup.SetActive(true);
         cutsceneSkipButtonGameObject.SetActive(true);
