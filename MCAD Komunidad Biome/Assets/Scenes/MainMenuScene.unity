@@ -531,7 +531,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: -450}
-  m_SizeDelta: {x: 350, y: 108}
+  m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403042181
 MonoBehaviour:
@@ -676,7 +676,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -350, y: -450}
-  m_SizeDelta: {x: 350, y: 108}
+  m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497326004
 MonoBehaviour:
@@ -1562,7 +1562,7 @@ PrefabInstance:
     - target: {fileID: 6627819757814805851, guid: 11c71a63230c2444d997e2163a6c9b16, type: 3}
       propertyPath: 'narrationList.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 43560639d56a8044bb564a8ff2aac786, type: 3}
+      objectReference: {fileID: 8300000, guid: ba7d43b800d500b47842241e46696a5f, type: 3}
     - target: {fileID: 7441946209750462279, guid: 11c71a63230c2444d997e2163a6c9b16, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -1784,7 +1784,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736790665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1795,7 +1795,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -250, y: 90}
-  m_SizeDelta: {x: 433, y: 108}
+  m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736790667
 MonoBehaviour:
@@ -2031,9 +2031,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IslandRotation
   islandGameObject: {fileID: 1847060630}
-  _yPosVariable: 0.00416
-  _zPosVariable: 0.01667
-  _zoomVariable: 0.00416
+  _yPosVariable: 0.00602
+  _zPosVariable: 0.00241
+  _zoomVariable: 0.00602
 --- !u!1 &1936929831
 GameObject:
   m_ObjectHideFlags: 0

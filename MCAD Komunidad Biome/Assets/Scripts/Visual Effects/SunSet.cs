@@ -11,9 +11,9 @@ public class SunSet : MonoBehaviour
     [SerializeField] private GameObject sunLight;
 
     [Header("Sunset Variables")]
-    // [SerializeField] private float _sunsetSkyboxFloat; // 0.00667f // 1 => 2 in 150 seconds
-    // [SerializeField] private float _sunsetSphereHeight; // 0.14066f // 20 => -1.1 in 150 seconds
-    [SerializeField] private float _sunLightXRotation; // 0.1633f // 163 - 187.5 => in 150 seconds
+    // [SerializeField] private float _sunsetSkyboxFloat; // 0.00415f // 1 => 2 in 241 seconds
+    // [SerializeField] private float _sunsetSphereHeight; // 0.08755f // 20 => -1.1 in 241 seconds
+    [SerializeField] private float _sunLightXRotation; // 0.10166f // 163 - 187.5 => in 241 seconds
 
     // private float _sunsetSkyboxAtmosThickness;
     // private float _sunsetYPosVariable;
@@ -53,7 +53,7 @@ public class SunSet : MonoBehaviour
 
             _counter += Time.deltaTime;
 
-            if (_counter >= 150)
+            if (_counter >= 241)
             {
                 _sunsetBool = false;
             }

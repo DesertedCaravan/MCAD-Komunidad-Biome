@@ -4,11 +4,11 @@ public class IslandRotation : MonoBehaviour
 {
     [Header("Island Game Object")]
     [SerializeField] private GameObject islandGameObject;
-
+    
     [Header("Size Variables")]
-    [SerializeField] private float _yPosVariable; // 0.00416f // -5 => -4 in 240 seconds
-    [SerializeField] private float _zPosVariable; // 0.01667f // 0 => -4 in 240 seconds
-    [SerializeField] private float _zoomVariable; // 0.00416f // 1 => 2 in 240 seconds
+    [SerializeField] private float _yPosVariable; // 0.00602f // -5 => -4 in 166 seconds
+    [SerializeField] private float _zPosVariable; // 0.00241f // 0 => -4 in 166 seconds
+    [SerializeField] private float _zoomVariable; // 0.00602f // 1 => 2 in 166 seconds
     private float _islandYPosVariable;
     private float _islandZPosVariable;
     private bool _islandZoom;

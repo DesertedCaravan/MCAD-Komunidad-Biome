@@ -10166,8 +10166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -460, y: -505}
-  m_SizeDelta: {x: 433, y: 108}
+  m_AnchoredPosition: {x: -455, y: -600}
+  m_SizeDelta: {x: 433, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &127146378
 MonoBehaviour:
@@ -10185,7 +10185,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: -164
+    m_Bottom: -75
   m_ChildAlignment: 6
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -57473,7 +57473,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -250, y: 90}
-  m_SizeDelta: {x: 433, y: 108}
+  m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1121478745
 MonoBehaviour:
@@ -76264,7 +76264,7 @@ MonoBehaviour:
   skybox: {fileID: 2100000, guid: a4f9b41d81b05d4419f5aeb57cd37991, type: 2}
   oceanBackRows: {fileID: 576463630}
   sunLight: {fileID: 70684890}
-  _sunLightXRotation: 0.1633
+  _sunLightXRotation: 0.10166
 --- !u!1001 &1581388171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100844,7 +100844,7 @@ PrefabInstance:
     - target: {fileID: 6627819757814805851, guid: 11c71a63230c2444d997e2163a6c9b16, type: 3}
       propertyPath: 'narrationList.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: ba7d43b800d500b47842241e46696a5f, type: 3}
+      objectReference: {fileID: 8300000, guid: 43560639d56a8044bb564a8ff2aac786, type: 3}
     - target: {fileID: 7441946209750462279, guid: 11c71a63230c2444d997e2163a6c9b16, type: 3}
       propertyPath: m_Name
       value: SoundManager
