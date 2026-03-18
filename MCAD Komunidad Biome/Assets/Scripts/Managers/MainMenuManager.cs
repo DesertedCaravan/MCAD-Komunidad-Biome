@@ -1,15 +1,16 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
+using UnityEngine.Video;
 
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Coroutine Delays")]
     [SerializeField] private float fadeDelay; // 0.5f
 
-    [Header("Scenes")]
+    [Header("Overworld Scene")]
     [SerializeField] private string gameScene; // OverworldScene
 
     [Header("Scene Transition")]
@@ -18,16 +19,13 @@ public class MainMenuManager : MonoBehaviour
     [Header("Menu Game Objects")]
     [SerializeField] private GameObject titleGameObject;
     [SerializeField] private GameObject startButtonGameObject;
-    // [SerializeField] private GameObject settingsButtonGameObject;
     [SerializeField] private GameObject quitButtonGameObject;
-    // [SerializeField] private GameObject settingsGroupGameObject;
 
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI startText;
     [SerializeField] private TextMeshProUGUI quitText;
 
     private Button startButton;
-    // private Button settingsButton;
     private Button quitButton;
 
     private Image startImage;
@@ -37,11 +35,15 @@ public class MainMenuManager : MonoBehaviour
     private float menuAlpha;
 
     [Header("Starting Cutscene Game Objects")]
+    [SerializeField] private VideoPlayer cutsceneVideoPlayer;
     [SerializeField] private GameObject cutsceneGroup;
+    [SerializeField] private GameObject cutsceneScreenGameObject;
     [SerializeField] private GameObject cutsceneSkipButtonGameObject;
-    [SerializeField] private Button cutsceneSkipButton;
-    [SerializeField] private IslandRotation islandRotation;
+
     private Button continueButton;
+
+    [Header("Island Controller")]
+    [SerializeField] private IslandRotation islandRotation;
 
     // Convert to Singleton
     public static MainMenuManager instance = null; // public static means that it can be accessed
@@ -63,21 +65,23 @@ public class MainMenuManager : MonoBehaviour
         SoundManager.instance.InitializeTracks();
         SoundManager.instance.PlayBGM(0);
 
-        cutsceneGroup.SetActive(false);
-        cutsceneSkipButtonGameObject.SetActive(false);
-
+        // Set up Menu Game Objects
         startButton = startButtonGameObject.GetComponent<Button>();
-        // settingsButton = settingsButtonGameObject.GetComponent<Button>();
         quitButton = quitButtonGameObject.GetComponent<Button>();
-        continueButton = cutsceneSkipButtonGameObject.GetComponent<Button>();
 
         startImage = startButtonGameObject.GetComponent<Image>();
         quitImage = quitButtonGameObject.GetComponent<Image>();
 
-        // settingsGroupGameObject.SetActive(false);
-
         menuFade = false;
         menuAlpha = 1.0f;
+
+        // Set Up Starting Cutscene
+        continueButton = cutsceneSkipButtonGameObject.GetComponent<Button>();
+
+        cutsceneVideoPlayer.loopPointReached += OnCutsceneFinished;
+        cutsceneVideoPlayer.Stop();
+        cutsceneVideoPlayer.Pause(); // Set Scene Cutscene
+        cutsceneGroup.SetActive(false);
     }
 
     void Update()
@@ -95,9 +99,9 @@ public class MainMenuManager : MonoBehaviour
 
             if (menuAlpha <= 0f)
             {
-                menuFade = false;
+                TriggerCutscene();
 
-                StartCutscene();
+                menuFade = false;
             }
         }
     }
@@ -109,26 +113,42 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        // Disable Buttons
         startButton.enabled = false;
-        // settingsButton.enabled = false;
         quitButton.enabled = false;
 
-        // Start Alpha Fade
         menuFade = true;
+    }
+
+    private void TriggerCutscene()
+    {
+        sceneTransition.StartFadeOutTransition(fadeDelay);
+
+        SoundManager.instance.StopCurrentBGM();
+
+        StartCoroutine(CO_TriggerCutscene());
+    }
+
+    IEnumerator CO_TriggerCutscene()
+    {
+        yield return new WaitForSeconds(fadeDelay + 1.0f);
+
+        StartCutscene();
     }
 
     private void StartCutscene()
     {
-        SoundManager.instance.PlayNarration(0, 0.3f);
-
         cutsceneGroup.SetActive(true);
-        cutsceneSkipButtonGameObject.SetActive(true);
 
-        // cutsceneSkipButton.onClick.RemoveAllListeners();
-        // cutsceneSkipButton.onClick.AddListener(LoadOverworldScene);
+        cutsceneVideoPlayer.Play();
 
-        islandRotation.ZoomIn();
+        sceneTransition.StartFadeInTransition(fadeDelay);
+
+        // islandRotation.ZoomIn();
+    }
+
+    private void OnCutsceneFinished(VideoPlayer vp)
+    {
+        LoadOverworldScene();
     }
 
     public void LoadOverworldScene()
@@ -149,9 +169,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        // Disable Buttons
         startButton.enabled = false;
-        // settingsButton.enabled = false;
         quitButton.enabled = false;
 
         sceneTransition.StartFadeOutTransition(fadeDelay);

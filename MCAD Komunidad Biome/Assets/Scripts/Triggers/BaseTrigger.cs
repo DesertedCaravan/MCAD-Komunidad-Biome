@@ -14,7 +14,7 @@ public class BaseTrigger : MonoBehaviour
     [SerializeField] private DialogueText triggerDialogue;
     [SerializeField] [TextArea] private string _triggerPopup;
     private bool _wasTriggered;
-    private bool _wasExited;
+    // private bool _wasExited;
     [SerializeField] private bool _allowRepeatTriggers;
 
     [Header("Response Events")]
@@ -32,10 +32,6 @@ public class BaseTrigger : MonoBehaviour
                 OverworldManager.instance.PauseForDialogue(); // Keep Player in place and Stop Walking Animation
                 DialogueBoxManager.instance.TransitionToDialogueTrigger(this, triggerDialogue);
             }
-            else if (triggerType == TypeStruct.Popup)
-            {
-                OverworldManager.instance.DisplayHUD(_triggerPopup, 0);
-            }
 
             OnStartInteract();
 
@@ -45,28 +41,11 @@ public class BaseTrigger : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<PlayerController>() != null && _wasExited == false)
-        {
-            if (triggerType == TypeStruct.Popup) // Note: TypeStruct.DialogueBox auto resolves by itself so there's no need to include it here
-            {
-                OverworldManager.instance.HideHUD();
-
-                OnEndDialogueInteract();
-
-                if (_allowRepeatTriggers == false)
-                {
-                    _wasExited = true;
-                }
-            }
-        }
-    }
 
     public void OverrideRepeatTrigger() // In case allowRepeatTriggers is set to true, let other game objects toggle wasTriggered
     {
         _wasTriggered = true;
-        _wasExited = true;
+        // _wasExited = true;
     }
 
     public void OnStartInteract()

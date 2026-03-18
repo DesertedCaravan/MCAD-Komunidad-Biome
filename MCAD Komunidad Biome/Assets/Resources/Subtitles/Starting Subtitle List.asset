@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182880954e82cd545b01f5955cd421e0, type: 3}
+  m_Name: Starting Subtitle List
+  m_EditorClassIdentifier: Assembly-CSharp::SubtitleList
+  subtitles:
+  - subtitle: Welcome to a place where humanity has led us.
+    time: 6
+  - subtitle: Throughout millennia, nature has been changing.
+    time: 10
+  - subtitle: But the changes took time.
+    time: 12
+  - subtitle: We adapt, mutate and change with the conditions of nature.
+    time: 14
+  - subtitle: It made us resilient to the forces of nature.
+    time: 18
+  - subtitle: 'Today is an accelerated time. '
+    time: 21
+  - subtitle: Changes are quickening, consumption is increasing.
+    time: 23
+  - subtitle: The typhoons are stronger, the heat is deadlier.
+    time: 26
+  - subtitle: What made us want more is the idea of a comfortable life.
+    time: 30
+  - subtitle: Extracting nature until it perishes.
+    time: 34
+  - subtitle: A cycle that repeats with indiscriminate consumption.
+    time: 36
+  - subtitle: Health, food, welfare. All of these has changed over time.
+    time: 39
+  - subtitle: Manila, a confounded city of tangled histories has changed over time.
+    time: 43
+  - subtitle: Manila is at the crux of colonial and capitalist legacies.
+    time: 48
+  - subtitle: The systems, structures and scales of this city have mutated, resulting
+      in an inhabitable condition of living.
+    time: 52
+  - subtitle: Much of Manila will submerge as the sea level rises.
+    time: 58
+  - subtitle: Extreme heat will introduce new diseases.
+    time: 62
+  - subtitle: '
+
+      (Natural resources will be depleted.)'
+    time: 62
+  - subtitle: 'Politics will be a game of survival. '
+    time: 66
+  - subtitle: "Much of Manila\u2019s culture will change into a doomsday scenario
+      without us noticing."
+    time: 68
+  - subtitle: In this age of anxiety, we question the plausible future, the possible
+      future.
+    time: 72
+  - subtitle: But it is human impulse to blindly pursue actualization and then belatedly
+      realize that everything is gone.
+    time: 76
+  - subtitle: The forensics are present, the codes of nature are there.
+    time: 80
+  - subtitle: The human aspect of the climate crisis is one that is entangled with
+      our culture.
+    time: 84
+  - subtitle: The way we see and do things affect the whole.
+    time: 88
+  - subtitle: 'unit '
+    time: 91
+  - subtitle: 
+    time: 95

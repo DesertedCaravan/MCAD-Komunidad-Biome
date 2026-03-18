@@ -1,10 +1,9 @@
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
-// using UnityEngine.Rendering;
-// using UnityEngine.Rendering.Universal;
+using UnityEngine.Video;
 
 public class OverworldManager : MonoBehaviour
 {
@@ -15,21 +14,23 @@ public class OverworldManager : MonoBehaviour
     [Header("Main Menu Scene")]
     [SerializeField] private string mainMenuScene; // MainMenuScene
 
-    [Header("Controller")]
-    [SerializeField] private PlayerController controller;
-
-    [Header("Volume")] // Reference: https://discussions.unity.com/t/how-edit-global-volume-profiles-from-script/858453/2
-    // [SerializeField] private VolumeProfile volumeProfile;
-    [SerializeField] private SunSet settingSun;
-
     [Header("Scene Transition")]
     [SerializeField] private SceneTransition sceneTransition;
+
+    [Header("Ending Cutscene Game Objects")]
+    [SerializeField] private VideoPlayer cutsceneVideoPlayer;
     [SerializeField] private GameObject cutsceneGroup;
+    [SerializeField] private GameObject cutsceneScreenGameObject;
     [SerializeField] private GameObject cutsceneSkipButtonGameObject;
-    [SerializeField] private Button cutsceneSkipButton;
-    [SerializeField] private GameObject HUDGroup; // only used at Start() to SetActive(true)
-    [SerializeField] private GameObject HUDTextGameObject;
-    [SerializeField] private TextMeshProUGUI HUDText;
+
+    private Button continueButton;
+
+    [Header("Sunset Controller")] // Reference: https://discussions.unity.com/t/how-edit-global-volume-profiles-from-script/858453/2
+    [SerializeField] private SunSet settingSun;
+
+    [Header("Player Controller")]
+    [SerializeField] private PlayerController controller;
+    [SerializeField] private GameObject playerControlsGroup;
 
     [Header("Player Character Prefab")]
     [SerializeField] private GameObject playerCharacterPrefab;
@@ -58,15 +59,59 @@ public class OverworldManager : MonoBehaviour
         SoundManager.instance.InitializeTracks();
         SoundManager.instance.PlayBGM(0);
 
-        cutsceneGroup.SetActive(false);
-        cutsceneSkipButtonGameObject.SetActive(false);
+        // Set Up Ending Cutscene Game Objects
+        continueButton = cutsceneSkipButtonGameObject.GetComponent<Button>();
 
-        HUDGroup.SetActive(true);
+        cutsceneVideoPlayer.loopPointReached += OnCutsceneFinished;
+        cutsceneVideoPlayer.Stop();
+        cutsceneVideoPlayer.Pause(); // Set Scene Cutscene
+        cutsceneGroup.SetActive(false);
+
+        /*
+        HUDText.text = "";
+        HUDGroup.SetActive(false);
         HUDTextGameObject.SetActive(false);
 
+        cutsceneStart = false;
+        cutsceneCounter = 0f;
+
+        cutsceneIndex = 0;
+        currentSubtitle = endingSubtitles.Subtitles[cutsceneIndex];
+        */
+
+        // Set Up Sunset Controller
         settingSun.PrepareSunset();
 
+        // Set Up Player Controller
         AllowMovement();
+    }
+
+    void Update()
+    {
+        // Debug.Log("Counter: " + cutsceneCounter);
+        /*
+        if (cutsceneStart == true)
+        {
+            cutsceneCounter += Time.deltaTime;
+
+            if (cutsceneCounter >= currentSubtitle.Time)
+            {
+                // Move to MainMenuScene when Narration Ends
+                if (cutsceneCounter >= 112f)
+                {
+                    LoadMainMenuScene();
+
+                    cutsceneStart = false;
+                }
+
+                HUDText.text = currentSubtitle.Subtitle;
+
+                cutsceneIndex++;
+                cutsceneIndex = Mathf.Clamp(cutsceneIndex, 0, endingSubtitles.Subtitles.Length - 1);
+                currentSubtitle = endingSubtitles.Subtitles[cutsceneIndex];
+            }
+        }
+        */
     }
 
     public void AllowMovement()
@@ -87,6 +132,8 @@ public class OverworldManager : MonoBehaviour
 
         sceneTransition.StartFadeOutTransition(fadeDelay);
 
+        SoundManager.instance.StopCurrentBGM();
+
         StartCoroutine(CO_TriggerCutscene());
     }
 
@@ -99,10 +146,21 @@ public class OverworldManager : MonoBehaviour
 
     private void StartCutscene()
     {
+        playerControlsGroup.SetActive(false);
+
+        cutsceneGroup.SetActive(true);
+
+        cutsceneVideoPlayer.Play();
+
+        sceneTransition.StartFadeInTransition(fadeDelay + 0.5f);
+
+        /*
+        playerControlsGroup.SetActive(false);
+
         var playePrefab = Instantiate(playerCharacterPrefab, endingPlayerPosition.transform.position, Quaternion.identity);
         playePrefab.transform.SetParent(endingPlayerPosition.transform);
 
-        sceneTransition.StartFadeInTransition(fadeDelay); // ADDED
+        sceneTransition.StartFadeInTransition(fadeDelay);
 
         SoundManager.instance.PlayNarration(0, 0.3f);
 
@@ -113,14 +171,17 @@ public class OverworldManager : MonoBehaviour
         controller.gameObject.transform.rotation = Quaternion.Euler(0f, -5f, 0f);
 
         settingSun.StartSunset();
+        */
+    }
 
-        // cutsceneSkipButton.onClick.RemoveAllListeners();
-        // cutsceneSkipButton.onClick.AddListener(LoadMainMenuScene);
+    private void OnCutsceneFinished(VideoPlayer vp)
+    {
+        LoadMainMenuScene();
     }
 
     public void LoadMainMenuScene()
     {
-        cutsceneSkipButton.enabled = false;
+        continueButton.enabled = false;
 
         sceneTransition.StartFadeOutTransition(fadeDelay);
 
@@ -139,6 +200,7 @@ public class OverworldManager : MonoBehaviour
         if (controller != null)
         {
             controller.enabled = false;
+            playerControlsGroup.SetActive(false);
         }
     }
 
@@ -147,30 +209,7 @@ public class OverworldManager : MonoBehaviour
         if (controller != null)
         {
             controller.enabled = true;
+            playerControlsGroup.SetActive(true);
         }
-    }
-    public void DisplayHUD(string text, int timer)
-    {
-        HUDText.text = text;
-        HUDTextGameObject.SetActive(true);
-
-        if (timer > 0)
-        {
-            StartCoroutine(CO_HideHUD(timer));
-        }
-    }
-
-    IEnumerator CO_HideHUD(int timer)
-    {
-        yield return new WaitForSeconds(timer);
-
-        HideHUD();
-
-    }
-
-    public void HideHUD()
-    {
-        HUDText.text = "";
-        HUDTextGameObject.SetActive(false);
     }
 }

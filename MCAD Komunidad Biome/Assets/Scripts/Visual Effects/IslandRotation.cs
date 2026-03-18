@@ -11,12 +11,12 @@ public class IslandRotation : MonoBehaviour
     [SerializeField] private float _zoomVariable; // 0.00602f // 1 => 2 in 166 seconds
     private float _islandYPosVariable;
     private float _islandZPosVariable;
-    private bool _islandZoom;
-    private float _counter;
+    // private bool _islandZoom;
+    // private float _counter;
 
     void Start()
     {
-        _islandZoom = false;
+        // _islandZoom = false;
 
         _islandYPosVariable = -5f;
         _islandZPosVariable = 0f;
@@ -24,15 +24,18 @@ public class IslandRotation : MonoBehaviour
         SetZoom();
         islandGameObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-        _counter = 0f;
+        // _counter = 0f;
     }
 
     void Update()
     {
         islandGameObject.transform.Rotate(new Vector3(0, Time.deltaTime, 0), Space.Self);
 
+        /*
         if (_islandZoom == true)
         {
+            islandGameObject.transform.Rotate(new Vector3(0, Time.deltaTime, 0), Space.Self);
+
             _islandYPosVariable += _yPosVariable * Time.deltaTime;
             _islandZPosVariable -= _zPosVariable * Time.deltaTime;
             SetZoom();
@@ -41,17 +44,20 @@ public class IslandRotation : MonoBehaviour
 
             _counter += Time.deltaTime;
 
-            if (_counter >= 240)
+            if (_counter >= 166f)
             {
                 _islandZoom = false;
             }
         }
+        */
     }
 
+    /*
     public void ZoomIn()
     {
         _islandZoom = true;
     }
+    */
 
     public void SetZoom()
     {

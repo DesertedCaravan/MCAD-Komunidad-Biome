@@ -92,8 +92,4 @@ public class BaseInteractable : MonoBehaviour, IInteractable
 
         Debug.Log("DIALOGUE RESET");
     }
-    public void PlayResponseText()
-    {
-        OverworldManager.instance.DisplayHUD(_responseText, _responseEndDelay);
-    }
 }

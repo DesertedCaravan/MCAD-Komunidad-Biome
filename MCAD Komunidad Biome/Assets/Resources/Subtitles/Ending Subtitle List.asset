@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182880954e82cd545b01f5955cd421e0, type: 3}
+  m_Name: Ending Subtitle List
+  m_EditorClassIdentifier: Assembly-CSharp::SubtitleList
+  subtitles:
+  - subtitle: "Now\u2019s The Time"
+    time: 0
+  - subtitle: The sun sets into darkness.
+    time: 2
+  - subtitle: Into the abyss. Into the unknown.
+    time: 3
+  - subtitle: We know that the sun will rise again soon.
+    time: 5
+  - subtitle: 'We know that we shall see again. '
+    time: 6
+  - subtitle: Another sunset means another chance to rest, to imagine how to live
+      today.
+    time: 9
+  - subtitle: 'Another sunset means another chance to rest, to imagine how to live
+      today.
+
+      (Another chance at trying, at converging into a state of hope.)'
+    time: 9
+  - subtitle: "To keep articulating what nature\u2019s systems are."
+    time: 14
+  - subtitle: To keep decoding the forensics of nature.
+    time: 17
+  - subtitle: To keep the cycle of birth and death of worlds.
+    time: 19
+  - subtitle: Our climate is one that is with the sun.
+    time: 22
+  - subtitle: Our world revolves around the sun.
+    time: 24
+  - subtitle: The sun that made life possible on earth, may also be the catalyst
+      of our demise.
+    time: 25
+  - subtitle: How do we see a world that is equitable?
+    time: 30
+  - subtitle: How do we become planetary?
+    time: 32
+  - subtitle: If borders and nation-states exist?
+    time: 34
+  - subtitle: These are exclusionary measures that prevent us from being whole.
+    time: 35
+  - subtitle: We share the climate, the ecosystem of living depends on each one of
+      us.
+    time: 38
+  - subtitle: How do we create a planetary thinking that reimagines a co-living of
+      all species?
+    time: 41
+  - subtitle: How do we free ourselves from the colonial and capitalist legacies
+      that repressed us?
+    time: 46
+  - subtitle: These are the vital ways to restructure our existence.
+    time: 50
+  - subtitle: To reconsider a world that may exist.
+    time: 53
+  - subtitle: To reimagine a world that is free.
+    time: 56
+  - subtitle: That is built towards an equitable give and take.
+    time: 58
+  - subtitle: "I don\u2019t have the full vision of it."
+    time: 61
+  - subtitle: But we can build a wisdom for it.
+    time: 62
+  - subtitle: 'For it to exist. '
+    time: 64
+  - subtitle: For all of us to want it.
+    time: 65
+  - subtitle: 'It is an endless quest. '
+    time: 66
+  - subtitle: A cycle of knowing and unknowing.
+    time: 67
+  - subtitle: And that I think is what nature is.
+    time: 69
+  - subtitle: A perpetual need to know what is it to be human.
+    time: 70
+  - subtitle: 'To be primal, to adapt in ways that nature lets us. '
+    time: 73
+  - subtitle: To decode the network of living things as world-making.
+    time: 76
+  - subtitle: "Now\u2019s the time to see the potential of a better world."
+    time: 79
+  - subtitle: For now is the time to be an actor in this future world.
+    time: 81
+  - subtitle: Past-present-future we travel into time, into space.
+    time: 84
+  - subtitle: In search of the new world we want to exist.
+    time: 88
+  - subtitle: We search deep and wide, we look for the spirit within.
+    time: 91
+  - subtitle: The sun rises and gives life once more.
+    time: 95
+  - subtitle: The sun sets into darkness.
+    time: 97
+  - subtitle: And rises again the next day, for us to see, to try once again.
+    time: 98
+  - subtitle: 
+    time: 107
